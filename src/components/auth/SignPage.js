@@ -35,7 +35,7 @@ const SignPage = () => {
                     alert(res.data.message)
 
                 } else {
-                    if(res.data.user.verifed == true){
+                    if(res.data.user.verifed){
                         navigate('/deals');
                     }
                     else{
