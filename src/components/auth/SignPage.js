@@ -8,8 +8,8 @@ const SignPage = () => {
 
     const [state, setState] = useState(true)
     const [Email, setEmail] = useState("");
-    const [otp , setOtp] = useState("");
-    const url = process.env.URL
+    const [otp, setOtp] = useState("");
+    const url = "https://back-ecom-six.vercel.app";
 
 
     const navigate = useNavigate();
@@ -20,10 +20,10 @@ const SignPage = () => {
 
         event.preventDefault();
         // console.log("onclick triggered")
-      
+
         console.log(Email)
 
-        axios.post(`${url}/user/EmailRegister`, { Email },{withCredentials:true})
+        axios.post(`${url}/user/EmailRegister`, { Email }, { withCredentials: true })
 
 
             .then((res) => {
@@ -35,13 +35,14 @@ const SignPage = () => {
                     alert(res.data.message)
 
                 } else {
-                    if(res.data.user.verifed == true){
-                        navigate('/deals');
-                    }
-                    else{
+                    if (res.data.user.verifed === false) {
                         setState(false)
                     }
-                    
+                    else {
+
+                        navigate('/deals');
+                    }
+
                 }
             })
             .catch((err) => {
@@ -50,42 +51,42 @@ const SignPage = () => {
     }
 
 
-    
+
 
 
 
 
     const handleSubmit = (event) => {
 
-    event.preventDefault(); // Prevents default form submission behavior
+        event.preventDefault(); // Prevents default form submission behavior
 
-    if(otp.length !=4){
-        setOtp(otp.slice(-4));
+        if (otp.length != 4) {
+            setOtp(otp.slice(-4));
+        }
+
+        axios.post(`${url}/user/Otpverfiy`, { Otp: otp }, { withCredentials: true })
+            .then((res) => {
+                console.log(res)
+                const msg = res.data;
+                if (msg == "Email Doesn't match") {
+                    alert(res.data)
+                }
+                else if (msg == "Otp Doesn't Match") {
+                    alert(res.data)
+                }
+                else {
+                    navigate('/user-form');
+                }
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+
+
+
     }
-    
-     axios.post(`${url}/user/Otpverfiy`,{Otp:otp},{withCredentials:true})
-     .then((res)=>{
-        console.log(res)
-        const msg = res.data;
-        if(msg == "Email Doesn't match"){
-            alert(res.data)
-        }
-        else if(msg == "Otp Doesn't Match"){
-            alert(res.data)
-        }
-        else{
-            navigate('/user-form');
-        }
-     })
-     .catch((err)=>{
-        console.log(err);
-     })
 
 
-        
-    }
-
-  
 
 
     return (
@@ -115,19 +116,19 @@ const SignPage = () => {
                                 <input
                                     type="text"
                                     class="w-14 h-14 text-center text-2xl font-extrabold text-slate-900 bg-slate-100 border border-gray hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-white focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
-                                    pattern="\d*" maxlength="1" onChange={e=>{setOtp(otp+e.target.value)}} />
+                                    pattern="\d*" maxlength="1" onChange={e => { setOtp(otp + e.target.value) }} />
                                 <input
                                     type="text"
                                     class="w-14 h-14 text-center text-2xl font-extrabold text-slate-900 bg-slate-100 border border-gray hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-white focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
-                                    maxlength="1" onChange={e=>{setOtp(otp+e.target.value)}} />
+                                    maxlength="1" onChange={e => { setOtp(otp + e.target.value) }} />
                                 <input
                                     type="text"
                                     class="w-14 h-14 text-center text-2xl font-extrabold text-slate-900 bg-slate-100 border border-gray hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-white focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
-                                    maxlength="1" onChange={e=>{setOtp(otp+e.target.value)}} />
+                                    maxlength="1" onChange={e => { setOtp(otp + e.target.value) }} />
                                 <input
                                     type="text"
                                     class="w-14 h-14 text-center text-2xl font-extrabold text-slate-900 bg-slate-100 border border-gray hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-white focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
-                                    maxlength="1" onChange={e=>{setOtp(otp+e.target.value)}}/>
+                                    maxlength="1" onChange={e => { setOtp(otp + e.target.value) }} />
                             </div>
                             <div class="max-w-[260px] mx-auto mt-4">
                                 <button type="submit"

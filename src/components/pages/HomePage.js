@@ -134,7 +134,7 @@ const HomePage = () => {
 
       {/* top home */}
 
-      <div class="max-w-md mx-auto bg-white rounded-xl overflow-hidden md:max-w-2xl md:flex pt-12">
+      <div class="max-w-md mx-auto bg-white rounded-xl overflow-hidden md:max-w-2xl md:flex pt-2">
         <div class="px-3 flex flex-col md:flex-row md:items-center">
           <div class="p-8 md:w-2/3">
             <div class="uppercase tracking-wide text-4xl text-indigo-500 font-bold text-justify">Earn cash</div>
@@ -267,8 +267,8 @@ const HomePage = () => {
 
       {/* end section */}
 
-      <div class="flex flex-col md:flex-row">
-        <div class="flex-1 p-4 items-center justify-center">
+      <div class=" flex flex-col mt-0 md:flex-row">
+        <div class="flex-1 mt-0 p-4 items-center justify-center">
           <h1 class="text-2xl font-bold mb-2 my-10">Don't have the Right Credit Card?</h1>
           <p class="mb-2">Don't worry! Our platform, Grab Credit Cards</p>
           <p class="mb-2">would help you get the most suitable card</p>

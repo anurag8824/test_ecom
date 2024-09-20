@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ProductPage = () => {
+const SingleProduct = () => {
     return (
         <div>
             <section class="py-6 sm:py-6">
@@ -102,7 +102,7 @@ const ProductPage = () => {
                                     <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 mr-3 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                                     </svg>
-                                    <a href='/single-product'>Click To Buy </a>
+                                    Click To Buy
                                 </button>
                             </div>
 
@@ -121,52 +121,54 @@ const ProductPage = () => {
                                     Amount Released on delivery confirmation
                                 </li>
                             </ul>
+
+                            <ul class="mt-8 space-y-1">
+                                <li class="flex items-center text-left text-sm font-medium text-gray-600">
+
+                                    Order ID
+                                    <svg class="w-3.5 h-3.5 ml-2 block align-middle" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+                                        <path d="M16 1h-3.278A1.992 1.992 0 0 0 11 0H7a1.993 1.993 0 0 0-1.722 1H2a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2Zm-3 14H5a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Zm0-4H5a1 1 0 0 1 0-2h8a1 1 0 1 1 0 2Zm0-5H5a1 1 0 0 1 0-2h2V2h4v2h2a1 1 0 1 1 0 2Z" />
+                                    </svg>
+                                </li>
+
+                                <p className='grid'>237GHS@2374</p>
+
+                                <hr />
+
+
+                                <li class="flex items-center text-left text-sm font-medium text-gray-600">
+
+                                    Order Address
+                                    <svg class="w-3.5 h-3.5 ml-2 block align-middle" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+                                        <path d="M16 1h-3.278A1.992 1.992 0 0 0 11 0H7a1.993 1.993 0 0 0-1.722 1H2a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2Zm-3 14H5a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Zm0-4H5a1 1 0 0 1 0-2h8a1 1 0 1 1 0 2Zm0-5H5a1 1 0 0 1 0-2h2V2h4v2h2a1 1 0 1 1 0 2Z" />
+                                    </svg>
+                                </li>
+
+                                <p className='grid'>43, xyz city India</p>
+
+                                <hr />
+
+                                <li class="flex items-center text-left text-sm font-medium text-gray-600">
+                                    Transaction ID
+
+
+                                    <svg class="w-3.5 h-3.5 ml-2 block align-middle" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+                                        <path d="M16 1h-3.278A1.992 1.992 0 0 0 11 0H7a1.993 1.993 0 0 0-1.722 1H2a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2Zm-3 14H5a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Zm0-4H5a1 1 0 0 1 0-2h8a1 1 0 1 1 0 2Zm0-5H5a1 1 0 0 1 0-2h2V2h4v2h2a1 1 0 1 1 0 2Z" />
+                                    </svg>
+                                </li>
+
+                                <p className='grid'>transactionno45898</p>
+
+                                <hr />
+                            </ul>
+
+
+
+
                         </div>
 
 
-                        {/* offer details from here  */}
-                        <div class="lg:col-span-3">
-                            <div class="border-b border-gray-300">
-                                <nav class="flex gap-4">
-                                    <a href="#" title="" class="border-b-2 border-gray-900 py-2 text-sm font-medium text-gray-900 hover:border-gray-400 hover:text-gray-800"> Offer Details </a>
 
-                                    {/* <a href="#" title="" class="inline-flex items-center border-b-2 border-transparent py-4 text-sm font-medium text-gray-600">
-                                        Reviews
-                                        <span class="ml-2 block rounded-full bg-gray-500 px-2 py-px text-xs font-bold text-gray-100"> 1,209 </span>
-                                    </a> */}
-                                </nav>
-                            </div>
-
-                            <div class="mt-3 flow-root sm:mt-12">
-                                {/* <h1 class="text-3xl font-bold">Delivered To Your Door</h1> */}
-                                <p class="mt-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia accusantium nesciunt fuga.</p>
-                                {/* <h1 class="mt-8 text-3xl font-bold">From the Fine Farms of Brazil</h1> */}
-                                <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio numquam enim facere.</p>
-                                <p class="mt-4">Amet consectetur adipisicing elit. Optio numquam enim facere. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore rerum nostrum eius facere, ad neque.</p>
-                            </div>
-                        </div>
-
-                        {/* tds details from here */}
-                        <div class="lg:col-span-3">
-                            <div class="border-b border-gray-300">
-                                <nav class="flex gap-4">
-                                    <a href="#" title="" class="border-b-2 border-gray-900 py-2 text-sm font-medium text-gray-900 hover:border-gray-400 hover:text-gray-800"> TDS Details </a>
-
-                                    {/* <a href="#" title="" class="inline-flex items-center border-b-2 border-transparent py-4 text-sm font-medium text-gray-600">
-                                        Reviews
-                                        <span class="ml-2 block rounded-full bg-gray-500 px-2 py-px text-xs font-bold text-gray-100"> 1,209 </span>
-                                    </a> */}
-                                </nav>
-                            </div>
-
-                            <div class="mt-3 flow-root sm:mt-12">
-                                {/* <h1 class="text-3xl font-bold">Delivered To Your Door</h1> */}
-                                <p class="mt-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia accusantium nesciunt fuga.</p>
-                                {/* <h1 class="mt-8 text-3xl font-bold">From the Fine Farms of Brazil</h1> */}
-                                <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio numquam enim facere.</p>
-                                <p class="mt-4">Amet consectetur adipisicing elit. Optio numquam enim facere. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore rerum nostrum eius facere, ad neque.</p>
-                            </div>
-                        </div>
 
 
 
@@ -178,4 +180,4 @@ const ProductPage = () => {
     )
 }
 
-export default ProductPage
+export default SingleProduct

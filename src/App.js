@@ -7,8 +7,12 @@ import SignPage from './components/auth/SignPage';
 import UserForm from './components/auth/UserForm';
 import ProfilePage from './components/pages/ProfilePage';
 import ProductPage from './components/pages/ProductPage';
-import AdminPage from './components/adminpanel/AdminPage';
-import DashBoard from './components/adminpanel/DashBoard';
+import SingleProduct from './components/pages/SingleProduct';
+import AboutUs from './components/pages/FooterPages/AboutUs';
+import Contact from './components/pages/FooterPages/Contact';
+import FAQ from './components/pages/FooterPages/FAQ';
+
+
 
 function App() {
   return (
@@ -21,8 +25,13 @@ function App() {
           <Route path="user-form" element={<UserForm />} />
           <Route path="profile" element={<ProfilePage />} />
           <Route path="product" element={<ProductPage />} />
-          <Route path="admin" element={<AdminPage />} />
-          <Route path="dashboard" element={<DashBoard />} />
+          <Route path="single-product" element={<SingleProduct />} />
+          <Route path="about-us" element={<AboutUs />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="faq" element={<FAQ />} />
+
+
+
 
           {/* <Route path="*" element={<NoPage />} /> */}
         </Route>
