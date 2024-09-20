@@ -8,7 +8,11 @@ const SignPage = () => {
 
     const [state, setState] = useState(true)
     const [Email, setEmail] = useState("");
+<<<<<<< HEAD
     const [otp, setOtp] = useState("");
+=======
+    const [otp , setOtp] = useState("");
+>>>>>>> 915daedc6bf3d7a99e24b9380b5edbb851ea1903
     const url = "https://back-ecom-six.vercel.app";
 
 
@@ -35,8 +39,17 @@ const SignPage = () => {
                     alert(res.data.message)
 
                 } else {
+<<<<<<< HEAD
                     if (res.data.user.verifed === false) {
                         setState(false)
+=======
+                    if(res.data.user.verifed === false ){
+                           setState(false)
+                    }
+                    else{
+                    
+                         navigate('/deals');
+>>>>>>> 915daedc6bf3d7a99e24b9380b5edbb851ea1903
                     }
                     else {
 
