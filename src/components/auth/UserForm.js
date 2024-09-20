@@ -8,7 +8,7 @@ const UserForm = () => {
     const [first_Name,setFirst_Name] = useState("");
     const [last_Name,setLast_Name] = useState("");
     const [Phoneno,setPhoneno] = useState("");
-    const url = https://back-ecom-six.vercel.app
+    const url = "https://back-ecom-six.vercel.app";
 
     function handleSubmit(event) {
         event.preventDefault();
