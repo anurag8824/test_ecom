@@ -35,11 +35,12 @@ const SignPage = () => {
                     alert(res.data.message)
 
                 } else {
-                    if(res.data.user.verifed){
-                        navigate('/deals');
+                    if(!res.data.user.verifed || res.data.user.verifed === false ){
+                           setState(false)
                     }
                     else{
-                        setState(false)
+                    
+                         navigate('/deals');
                     }
                     
                 }
