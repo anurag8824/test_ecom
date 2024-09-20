@@ -9,7 +9,6 @@ import ProfilePage from './components/pages/ProfilePage';
 import ProductPage from './components/pages/ProductPage';
 import AdminPage from './components/adminpanel/AdminPage';
 import DashBoard from './components/adminpanel/DashBoard';
-import Iframe from './components/pages/Iframe';
 
 function App() {
   return (
@@ -24,8 +23,6 @@ function App() {
           <Route path="product" element={<ProductPage />} />
           <Route path="admin" element={<AdminPage />} />
           <Route path="dashboard" element={<DashBoard />} />
-          <Route path="link-order" element={<Iframe />} />
-
 
           {/* <Route path="*" element={<NoPage />} /> */}
         </Route>

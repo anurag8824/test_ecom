@@ -4,16 +4,16 @@ import { FaHome, FaTags, FaUser } from 'react-icons/fa';
 const Footer = () => {
   return (
 
-    <div className="overflow-hidden">
+    <div className="flex flex-col min-h-screen">
     {/* Main Content */}
     
-    <main className="">
+    <main className="flex-grow">
       {/* Your main content goes here */}
     </main>
 
         
     <footer className="bg-white dark:bg-gray-900 mt-auto">
-      <div className="mx-auto w-auto flex-grow  p-4 py-6 lg:py-8">
+      <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         {/* Desktop View */}
         <div className="hidden md:flex md:justify-between">
           <div className="mb-6 md:mb-0">

@@ -9,12 +9,13 @@ const SignPage = () => {
     const [state, setState] = useState(true)
     const [Email, setEmail] = useState("");
     const [otp , setOtp] = useState("");
+    const url = process.env.URL
 
 
     const navigate = useNavigate();
 
 
-    // useEffect(() => {
+
     const showForm = (event) => {
 
         event.preventDefault();
@@ -22,7 +23,7 @@ const SignPage = () => {
       
         console.log(Email)
 
-        axios.post('http://localhost:8000/user/EmailRegister', { Email })
+        axios.post(`${url}/user/EmailRegister`, { Email },{withCredentials:true})
 
 
             .then((res) => {
@@ -34,7 +35,13 @@ const SignPage = () => {
                     alert(res.data.message)
 
                 } else {
-                    setState(false)
+                    if(res.data.user.verifed == true){
+                        navigate('/deals');
+                    }
+                    else{
+                        setState(false)
+                    }
+                    
                 }
             })
             .catch((err) => {
@@ -43,38 +50,42 @@ const SignPage = () => {
     }
 
 
-    // }, [])
+    
 
 
 
 
     const handleSubmit = (event) => {
 
-        event.preventDefault(); // Prevents default form submission behavior
+    event.preventDefault(); // Prevents default form submission behavior
+
+    if(otp.length !=4){
+        setOtp(otp.slice(-4));
+    }
+    
+     axios.post(`${url}/user/Otpverfiy`,{Otp:otp},{withCredentials:true})
+     .then((res)=>{
+        console.log(res)
+        const msg = res.data;
+        if(msg == "Email Doesn't match"){
+            alert(res.data)
+        }
+        else if(msg == "Otp Doesn't Match"){
+            alert(res.data)
+        }
+        else{
+            navigate('/user-form');
+        }
+     })
+     .catch((err)=>{
+        console.log(err);
+     })
 
 
-
-
-        navigate('/user-form');
+        
     }
 
-    // useEffect(() => {
-
-    //     // axios.get('')
-    //     // .then(response => {
-    //     //     // Handle success
-    //     //     setData(response.data);
-    //     //     setLoading(false);
-    //     //   })
-    //     //   .catch(error => {
-    //     //     // Handle error
-    //     //     setError(error);
-    //     //     setLoading(false);
-    //     //   });
-
-
-
-    // }, [])
+  
 
 
     return (
@@ -104,19 +115,19 @@ const SignPage = () => {
                                 <input
                                     type="text"
                                     class="w-14 h-14 text-center text-2xl font-extrabold text-slate-900 bg-slate-100 border border-gray hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-white focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
-                                    pattern="\d*" maxlength="1" />
+                                    pattern="\d*" maxlength="1" onChange={e=>{setOtp(otp+e.target.value)}} />
                                 <input
                                     type="text"
                                     class="w-14 h-14 text-center text-2xl font-extrabold text-slate-900 bg-slate-100 border border-gray hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-white focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
-                                    maxlength="1" />
+                                    maxlength="1" onChange={e=>{setOtp(otp+e.target.value)}} />
                                 <input
                                     type="text"
                                     class="w-14 h-14 text-center text-2xl font-extrabold text-slate-900 bg-slate-100 border border-gray hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-white focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
-                                    maxlength="1" />
+                                    maxlength="1" onChange={e=>{setOtp(otp+e.target.value)}} />
                                 <input
                                     type="text"
                                     class="w-14 h-14 text-center text-2xl font-extrabold text-slate-900 bg-slate-100 border border-gray hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-white focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
-                                    maxlength="1" />
+                                    maxlength="1" onChange={e=>{setOtp(otp+e.target.value)}}/>
                             </div>
                             <div class="max-w-[260px] mx-auto mt-4">
                                 <button type="submit"
