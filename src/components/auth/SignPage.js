@@ -9,7 +9,7 @@ const SignPage = () => {
     const [state, setState] = useState(true)
     const [Email, setEmail] = useState("");
     const [otp , setOtp] = useState("");
-    const url = https://back-ecom-six.vercel.app
+    const url = "https://back-ecom-six.vercel.app";
 
 
     const navigate = useNavigate();
