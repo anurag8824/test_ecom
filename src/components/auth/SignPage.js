@@ -35,9 +35,10 @@ const SignPage = () => {
                     alert(res.data.message)
 
                 } else {
-                    if (res.data.user.verifed === false) {
+                    if (res.data.user == null || res.data.user.verifed==false) {
                         setState(false)
                     }
+                        
                     else {
 
                         navigate('/deals');
@@ -60,14 +61,14 @@ const SignPage = () => {
 
         event.preventDefault(); // Prevents default form submission behavior
 
-        if (otp.length != 4) {
+        if (otp.length > 4) {
             setOtp(otp.slice(-4));
         }
 
         axios.post(`${url}/user/Otpverfiy`, { Otp: otp }, { withCredentials: true })
             .then((res) => {
                 console.log(res)
-                const msg = res.data;
+                const msg = res.data.msg;
                 if (msg == "Email Doesn't match") {
                     alert(res.data)
                 }
