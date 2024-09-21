@@ -15,46 +15,51 @@ const SignPage = () => {
     const navigate = useNavigate();
 
     const checking = Email.length > 0
-    if(checking) {
-        
+    
 
 
 
-    const showForm = (event) => {
 
-        event.preventDefault();
-        // console.log("onclick triggered")
+        const showForm = (event) => {
 
-        console.log(Email)
+            event.preventDefault();
+            // console.log("onclick triggered")
 
-        axios.post(`${url}/user/EmailRegister`, { Email }, { withCredentials: true })
+            console.log(Email)
+            if (checking) {
+
+            axios.post(`${url}/user/EmailRegister`, { Email }, { withCredentials: true })
 
 
-            .then((res) => {
-                console.log(res);
-                const mes = res.data.message
-                if (mes == "user already exist!") {
-                    alert(res.data.message)
-                } else if (mes == "Error is sending Email !") {
-                    alert(res.data.message)
+                .then((res) => {
+                    console.log(res);
+                    const mes = res.data.message
+                    if (mes == "user already exist!") {
+                        alert(res.data.message)
+                    } else if (mes == "Error is sending Email !") {
+                        alert(res.data.message)
 
-                } else {
-                    if (res.data.user == null || res.data.user.verifed==false) {
-                        setState(false)
+                    } else {
+                        if (res.data.user == null || res.data.user.verifed == false) {
+                            setState(false)
+                        }
+
+                        else {
+
+                            navigate('/deals');
+                        }
+
                     }
-                        
-                    else {
-
-                        navigate('/deals');
-                    }
-
-                }
-            })
-            .catch((err) => {
-                console.log(err);
-            })
-    }
-}
+                })
+                .catch((err) => {
+                    console.log(err);
+                })
+            }
+            else{
+                alert('Please Enter Your Email Address');
+            }
+        }
+   
 
 
 
