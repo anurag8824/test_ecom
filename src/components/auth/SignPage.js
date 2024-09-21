@@ -1,64 +1,64 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+// import React from 'react'
+// import { useState, useEffect } from 'react'
+// import { useNavigate } from 'react-router-dom';
+// import axios from 'axios';
 
 
-const SignPage = () => {
+// const SignPage = () => {
 
-    const [state, setState] = useState(true)
-    const [Email, setEmail] = useState("");
-    const [otp, setOtp] = useState("");
-    const url = "https://back-ecom-six.vercel.app";
+//     const [state, setState] = useState(true)
+//     const [Email, setEmail] = useState("");
+//     const [otp, setOtp] = useState("");
+//     const url = "https://back-ecom-six.vercel.app";
 
 
-    const navigate = useNavigate();
+//     const navigate = useNavigate();
 
-    const checking = Email.length > 0
+//     const checking = Email.length > 0
     
 
 
 
 
-        const showForm = (event) => {
+//         const showForm = (event) => {
 
-            event.preventDefault();
-            // console.log("onclick triggered")
+//             event.preventDefault();
+//             // console.log("onclick triggered")
 
-            console.log(Email)
-            if (checking) {
+//             console.log(Email)
+//             if (checking) {
 
-            axios.post(`${url}/user/EmailRegister`, { Email }, { withCredentials: true })
+//             axios.post(`${url}/user/EmailRegister`, { Email }, { withCredentials: true })
 
 
-                .then((res) => {
-                    console.log(res);
-                    const mes = res.data.message
-                    if (mes == "user already exist!") {
-                        alert(res.data.message)
-                    } else if (mes == "Error is sending Email !") {
-                        alert(res.data.message)
+//                 .then((res) => {
+//                     console.log(res);
+//                     const mes = res.data.message
+//                     if (mes == "user already exist!") {
+//                         alert(res.data.message)
+//                     } else if (mes == "Error is sending Email !") {
+//                         alert(res.data.message)
 
-                    } else {
-                        if (res.data.user == null || res.data.user.verifed == false) {
-                            setState(false)
-                        }
+//                     } else {
+//                         if (res.data.user == null || res.data.user.verifed == false) {
+//                             setState(false)
+//                         }
 
-                        else {
+//                         else {
 
-                            navigate('/deals');
-                        }
+//                             navigate('/deals');
+//                         }
 
-                    }
-                })
-                .catch((err) => {
-                    console.log(err);
-                })
-            }
-            else{
-                alert('Please Enter Your Email Address');
-            }
-        }
+//                     }
+//                 })
+//                 .catch((err) => {
+//                     console.log(err);
+//                 })
+//             }
+//             else{
+//                 alert('Please Enter Your Email Address');
+//             }
+//         }
    
 
 
@@ -67,94 +67,241 @@ const SignPage = () => {
 
 
 
-    const handleSubmit = (event) => {
+//     const handleSubmit = (event) => {
 
-        event.preventDefault(); // Prevents default form submission behavior
+//         event.preventDefault(); // Prevents default form submission behavior
 
-        if (otp.length > 4) {
-            setOtp(otp.slice(-4));
-        }
+//         if (otp.length > 4) {
+//             setOtp(otp.slice(-4));
+//         }
 
-        axios.post(`${url}/user/Otpverfiy`, { Otp: otp }, { withCredentials: true })
-            .then((res) => {
-                console.log(res)
-                const msg = res.data.msg;
-                if (msg == "Email Doesn't match") {
-                    alert(res.data)
-                }
-                else if (msg == "Otp Doesn't Match") {
-                    alert(res.data)
-                }
-                else {
-                    navigate('/user-form');
-                }
-            })
-            .catch((err) => {
-                console.log(err);
-            })
+//         axios.post(`${url}/user/Otpverfiy`, { Otp: otp }, { withCredentials: true })
+//             .then((res) => {
+//                 console.log(res)
+//                 const msg = res.data.msg;
+//                 if (msg == "Email Doesn't match") {
+//                     alert(res.data)
+//                 }
+//                 else if (msg == "Otp Doesn't Match") {
+//                     alert(res.data)
+//                 }
+//                 else {
+//                     navigate('/user-form');
+//                 }
+//             })
+//             .catch((err) => {
+//                 console.log(err);
+//             })
 
 
 
+//     }
+
+
+
+
+//     return (
+//         <div>
+//             <div class="w-full max-w-6xl mx-auto px-4 md:px-6 py-24">
+//                 <div class={`justify-center ${state === true ? "block" : "hidden"}`}>
+//                     <form class="max-w-sm mx-auto">
+//                         <div class="mb-5">
+//                             <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Enter Your email</label>
+//                             <input type="email" id="email" onChange={e => setEmail(e.target.value)} class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@xyz1234.com" required />
+//                         </div>
+
+//                         <button type="submit" onClick={showForm} class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Send OTP</button>
+//                     </form>
+//                 </div>
+
+
+
+//                 <div class={`justify-center ${state === true ? "hidden" : "block"}`}  >
+//                     <div class="max-w-md mx-auto text-center bg-white px-4 sm:px-8 py-10 rounded-xl">
+//                         <header class="mb-8">
+//                             <p class="text-[15px] text-slate-500">Enter the 4-digit verification code that was sent to your email id.</p>
+//                         </header>
+
+//                         <form id="otp-form" onSubmit={handleSubmit}>
+//                             <div class="flex items-center justify-center gap-3">
+//                                 <input
+//                                     type="text"
+//                                     class="w-14 h-14 text-center text-2xl font-extrabold text-slate-900 bg-slate-100 border border-gray hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-white focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
+//                                     pattern="\d*" maxlength="1" onChange={e => { setOtp(otp + e.target.value) }} />
+//                                 <input
+//                                     type="text"
+//                                     class="w-14 h-14 text-center text-2xl font-extrabold text-slate-900 bg-slate-100 border border-gray hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-white focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
+//                                     maxlength="1" onChange={e => { setOtp(otp + e.target.value) }} />
+//                                 <input
+//                                     type="text"
+//                                     class="w-14 h-14 text-center text-2xl font-extrabold text-slate-900 bg-slate-100 border border-gray hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-white focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
+//                                     maxlength="1" onChange={e => { setOtp(otp + e.target.value) }} />
+//                                 <input
+//                                     type="text"
+//                                     class="w-14 h-14 text-center text-2xl font-extrabold text-slate-900 bg-slate-100 border border-gray hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-white focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
+//                                     maxlength="1" onChange={e => { setOtp(otp + e.target.value) }} />
+//                             </div>
+//                             <div class="max-w-[260px] mx-auto mt-4">
+//                                 <button type="submit"
+
+//                                     class="w-full inline-flex justify-center whitespace-nowrap rounded-lg bg-blue-700 px-3.5 py-2.5 text-sm font-medium text-white shadow-sm shadow-indigo-950/10 hover:bg-indigo-600 focus:outline-none focus:ring focus:ring-indigo-300 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 transition-colors duration-150">Verify
+//                                     Account</button>
+//                             </div>
+//                         </form>
+
+//                         <div class="text-sm text-slate-500 mt-4">Didn't receive code? <a class="font-medium text-indigo-500 hover:text-indigo-600" href="#0">Resend</a></div>
+//                     </div>
+//                 </div>
+//             </div>
+//         </div>
+//     )
+// }
+
+// export default SignPage
+  
+// old code upward before otp uatonext
+
+import React, { useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
+const SignPage = () => {
+  const [state, setState] = useState(true);
+  const [Email, setEmail] = useState("");
+  const [otp, setOtp] = useState(["", "", "", ""]);
+  const otpRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
+  const url = "https://back-ecom-six.vercel.app";
+  const navigate = useNavigate();
+
+  const checking = Email.length > 0;
+
+  const showForm = (event) => {
+    event.preventDefault();
+    if (checking) {
+      axios.post(`${url}/user/EmailRegister`, { Email }, { withCredentials: true })
+        .then((res) => {
+          const mes = res.data.message;
+          console.log(res);
+          if (mes === "user already exist!") {
+            alert(res.data.message);
+          } else if (mes === "Error is sending Email !") {
+            alert(res.data.message);
+          } else {
+            if (res.data.user == null || res.data.user.verifed === false) {
+              setState(false);
+            } else {
+              navigate('/deals');
+            }
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      alert('Please Enter Your Email Address');
     }
+  };
 
+  const handleChange = (value, index) => {
+    if (/^\d$/.test(value)) {
+      const newOtp = [...otp];
+      newOtp[index] = value;
+      setOtp(newOtp);
+      if (index < 3) {
+        otpRefs[index + 1].current.focus(); // Move to the next input
+      }
+    }
+  };
 
+  const handleKeyDown = (e, index) => {
+    if (e.key === "Backspace") {
+      e.preventDefault(); // Prevent default backspace behavior
+      const newOtp = [...otp];
 
+      if (newOtp[index] === "") {
+        if (index > 0) {
+          newOtp[index - 1] = ""; // Clear the previous input
+          otpRefs[index - 1].current.focus(); // Focus on the previous input
+        }
+      } else {
+        newOtp[index] = ""; // Clear the current input
+      }
 
-    return (
-        <div>
-            <div class="w-full max-w-6xl mx-auto px-4 md:px-6 py-24">
-                <div class={`justify-center ${state === true ? "block" : "hidden"}`}>
-                    <form class="max-w-sm mx-auto">
-                        <div class="mb-5">
-                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Enter Your email</label>
-                            <input type="email" id="email" onChange={e => setEmail(e.target.value)} class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@xyz1234.com" required />
-                        </div>
+      setOtp(newOtp);
+    }
+  };
 
-                        <button type="submit" onClick={showForm} class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Send OTP</button>
-                    </form>
-                </div>
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const otpCode = otp.join('');
+    console.log(otpCode)
+    axios.post(`${url}/user/Otpverfiy`, { Otp: otpCode }, { withCredentials: true })
+      .then((res) => {
+        const msg = res.data.msg;
+        if (msg === "Email Doesn't match" || msg === "Otp Doesn't Match") {
+          alert(res.data);
+        } else {
+          navigate('/user-form');
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
-
-
-                <div class={`justify-center ${state === true ? "hidden" : "block"}`}  >
-                    <div class="max-w-md mx-auto text-center bg-white px-4 sm:px-8 py-10 rounded-xl">
-                        <header class="mb-8">
-                            <p class="text-[15px] text-slate-500">Enter the 4-digit verification code that was sent to your email id.</p>
-                        </header>
-
-                        <form id="otp-form" onSubmit={handleSubmit}>
-                            <div class="flex items-center justify-center gap-3">
-                                <input
-                                    type="text"
-                                    class="w-14 h-14 text-center text-2xl font-extrabold text-slate-900 bg-slate-100 border border-gray hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-white focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
-                                    pattern="\d*" maxlength="1" onChange={e => { setOtp(otp + e.target.value) }} />
-                                <input
-                                    type="text"
-                                    class="w-14 h-14 text-center text-2xl font-extrabold text-slate-900 bg-slate-100 border border-gray hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-white focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
-                                    maxlength="1" onChange={e => { setOtp(otp + e.target.value) }} />
-                                <input
-                                    type="text"
-                                    class="w-14 h-14 text-center text-2xl font-extrabold text-slate-900 bg-slate-100 border border-gray hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-white focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
-                                    maxlength="1" onChange={e => { setOtp(otp + e.target.value) }} />
-                                <input
-                                    type="text"
-                                    class="w-14 h-14 text-center text-2xl font-extrabold text-slate-900 bg-slate-100 border border-gray hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-white focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
-                                    maxlength="1" onChange={e => { setOtp(otp + e.target.value) }} />
-                            </div>
-                            <div class="max-w-[260px] mx-auto mt-4">
-                                <button type="submit"
-
-                                    class="w-full inline-flex justify-center whitespace-nowrap rounded-lg bg-blue-700 px-3.5 py-2.5 text-sm font-medium text-white shadow-sm shadow-indigo-950/10 hover:bg-indigo-600 focus:outline-none focus:ring focus:ring-indigo-300 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 transition-colors duration-150">Verify
-                                    Account</button>
-                            </div>
-                        </form>
-
-                        <div class="text-sm text-slate-500 mt-4">Didn't receive code? <a class="font-medium text-indigo-500 hover:text-indigo-600" href="#0">Resend</a></div>
-                    </div>
-                </div>
+  return (
+    <div>
+      <div className="w-full max-w-6xl mx-auto px-4 md:px-6 py-24">
+        <div className={`justify-center ${state ? "block" : "hidden"}`}>
+          <form className="max-w-sm mx-auto">
+            <div className="mb-5">
+              <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Enter Your email</label>
+              <input type="email" id="email" onChange={e => setEmail(e.target.value)}
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="name@xyz1234.com" required />
             </div>
+            <button type="submit" onClick={showForm}
+              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+              Send OTP
+            </button>
+          </form>
         </div>
-    )
-}
 
-export default SignPage
+        <div className={`justify-center ${state ? "hidden" : "block"}`}>
+          <div className="max-w-md mx-auto text-center bg-white px-4 sm:px-8 py-10 rounded-xl">
+            <header className="mb-8">
+              <p className="text-[15px] text-slate-500">Enter the 4-digit verification code that was sent to your email id.</p>
+            </header>
+
+            <form id="otp-form" onSubmit={handleSubmit}>
+              <div className="flex items-center justify-center gap-3">
+                {otp.map((value, index) => (
+                  <input
+                    key={index}
+                    ref={otpRefs[index]}
+                    type="text"
+                    className="w-14 h-14 text-center text-2xl font-extrabold text-slate-900 bg-slate-100 border border-gray hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-white focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
+                    maxLength="1"
+                    value={value}
+                    onChange={(e) => handleChange(e.target.value, index)}
+                    onKeyDown={(e) => handleKeyDown(e, index)} // Handle backspace
+                  />
+                ))}
+              </div>
+              <div className="max-w-[260px] mx-auto mt-4">
+                <button type="submit"
+                  className="w-full inline-flex justify-center whitespace-nowrap rounded-lg bg-blue-700 px-3.5 py-2.5 text-sm font-medium text-white shadow-sm shadow-indigo-950/10 hover:bg-indigo-600 focus:outline-none focus:ring focus:ring-indigo-300 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 transition-colors duration-150">
+                  Verify Account
+                </button>
+              </div>
+            </form>
+
+            <div className="text-sm text-slate-500 mt-4">Didn't receive code? <a className="font-medium text-indigo-500 hover:text-indigo-600" href="#0">Resend</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default SignPage;
