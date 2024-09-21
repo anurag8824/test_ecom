@@ -68,7 +68,7 @@ const SignPage = () => {
         axios.post(`${url}/user/Otpverfiy`, { Otp: otp }, { withCredentials: true })
             .then((res) => {
                 console.log(res)
-                const msg = res.data;
+                const msg = res.data.msg;
                 if (msg == "Email Doesn't match") {
                     alert(res.data)
                 }
