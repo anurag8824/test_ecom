@@ -14,6 +14,10 @@ const SignPage = () => {
 
     const navigate = useNavigate();
 
+    const checking = Email.length > 0
+    if(checking) {
+        
+
 
 
     const showForm = (event) => {
@@ -50,6 +54,7 @@ const SignPage = () => {
                 console.log(err);
             })
     }
+}
 
 
 
