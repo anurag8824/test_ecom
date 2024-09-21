@@ -61,7 +61,7 @@ const SignPage = () => {
 
         event.preventDefault(); // Prevents default form submission behavior
 
-        if (otp.length != 4) {
+        if (otp.length > 4) {
             setOtp(otp.slice(-4));
         }
 
