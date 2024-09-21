@@ -1,288 +1,366 @@
 import React from 'react'
-import { useState } from 'react';
-import Carousel from './Carousel';
-import CardComponent from './CardComponent';
-import ReviewPage from './ReviewPage';
+import NewCarousal from './NewCarousal';
 
-
-
-
-const HomePage = () => {
-
-  // TrendingOffers.js
-
-  const offers = [
-    {
-      id: 1,
-      title: 'Earn Rs. 300',
-      description: 'by using your ICICI Bank card',
-      details: 'More than 200 users have earned Rs. 70,000 in the last 30 days',
-      // image: 'icici.png',
-      bgColor: 'bg-red-500',
-    },
-    {
-      id: 2,
-      title: 'Earn Rs. 600',
-      description: 'by using your HDFC Mahindra Bank card',
-      details: 'More than 100 users have earned Rs. 50,000 in the last 30 days',
-      // image: 'hdfc.png',
-      bgColor: 'bg-purple-500',
-    },
-
-    {
-      id: 3,
-      title: 'Earn Rs. 600',
-      description: 'by using your Axis Bank card',
-      details: 'More than 100 users have earned Rs. 50,000 in the last 30 days',
-      // image: 'axis.png',
-      bgColor: 'bg-blue-500',
-    },
-
-    {
-      id: 4,
-      title: 'Earn Rs. 600',
-      description: 'by using your Kotak Mahindra Bank card',
-      details: 'More than 100 users have earned Rs. 50,000 in the last 30 days',
-      // image: 'kotak.png',
-      bgColor: 'bg-yellow-500',
-    },
-
-    {
-      id: 5,
-      title: 'Earn Rs. 600',
-      description: 'by using your One card',
-      details: 'More than 100 users have earned Rs. 50,000 in the last 30 days',
-      // image: 'one.png',
-      bgColor: 'bg-gray-500',
-    },
-    // Add more offers if needed
-  ];
-
-
-  //reviews list.js
-  const reviews = [
-    {
-      id: 1,
-      name: 'Ashok',
-      description: 'by using your ICICI Bank card',
-      details: 'More than 200 users have earned Rs. 70,000 in the last 30 days',
-      // image: 'icici.png',
-      bgColor: 'bg-red-500',
-    },
-    {
-      id: 2,
-      name: 'Shantanu',
-      description: 'by using your HDFC Mahindra Bank card',
-      details: 'More than 100 users have earned Rs. 50,000 in the last 30 days',
-      // image: 'hdfc.png',
-      bgColor: 'bg-purple-500',
-    },
-
-    {
-      id: 3,
-      name: 'Bhavesh',
-      description: 'by using your Axis Bank card',
-      details: 'More than 100 users have earned Rs. 50,000 in the last 30 days',
-      // image: 'axis.png',
-      bgColor: 'bg-blue-500',
-    },
-
-    {
-      id: 4,
-      name: 'Arpit',
-      description: 'by using your Kotak Mahindra Bank card',
-      details: 'More than 100 users have earned Rs. 50,000 in the last 30 days',
-      // image: 'kotak.png',
-      bgColor: 'bg-yellow-500',
-    },
-
-    {
-      id: 5,
-      name: 'Lakshay',
-      description: 'by using your One card',
-      details: 'More than 100 users have earned Rs. 50,000 in the last 30 days',
-      // image: 'one.png',
-      bgColor: 'bg-gray-500',
-    },
-    // Add more offers if needed
-  ];
-
-
-
-  const [current, setCurrent] = useState(0);
-
-  const nextOffer = () => {
-    setCurrent((current + 1) % offers.length);
-  };
-
-  const prevOffer = () => {
-    setCurrent((current - 1 + offers.length) % offers.length);
-  };
-
-  const nextReview = () => {
-    setCurrent((current + 1) % reviews.length);
-  };
-
-  const prevReview = () => {
-    setCurrent((current - 1 + reviews.length) % reviews.length);
-  };
-
-
-
+const NewHomePage = () => {
   return (
     <div>
+      <div class=" bg-gray-800">
 
-      {/* top home */}
-
-      <div class="max-w-md mx-auto bg-white rounded-xl overflow-hidden md:max-w-2xl md:flex pt-2">
-        <div class="px-3 flex flex-col md:flex-row md:items-center">
-          <div class="p-8 md:w-2/3">
-            <div class="uppercase tracking-wide text-4xl text-indigo-500 font-bold text-justify">Earn cash</div>
-            <p class="block mt-1 text-lg leading-tight font-medium text-black text-justify">from your Credit Cards and Maximise your Rewards too!</p>
-            <p class="mt-2 text-slate-500 text-justify">Use your cards to order for others and earn on every order</p>
-          </div>
-          <div class="md:w-1/3">
-            {/* <img class="h-48 w-full object-cover md:h-full md:w-48" src="./sideimage.png" alt="Modern building architecture" /> */}
-            <Carousel />
-
+        <div class="mx-auto h-full px-4 py-28 md:py-40 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8">
+          <div class="flex flex-col items-center justify-between lg:flex-row">
+            <div class="">
+              <div class="lg:max-w-xl lg:pr-5">
+                <p class="flex text-sm uppercase text-gray-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 inline h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" clip-rule="evenodd" />
+                  </svg>
+                  An agency for high growth startups
+                </p>
+                <h2 class="mb-6 max-w-lg text-5xl font-bold leading-snug tracking-tight text-white sm:text-7xl sm:leading-snug">
+                  We make you look
+                  <span class="my-1 inline-block border-b-8 border-white bg-orange-400 px-4 font-bold text-white">different</span>
+                </h2>
+                <p class="text-base text-gray-400">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque it.</p>
+              </div>
+              <div class="mt-10 flex flex-col items-center md:flex-row">
+                <a href="/" class="mb-3 inline-flex h-12 w-full items-center justify-center rounded bg-blue-700 px-6 font-medium tracking-wide text-white shadow-md transition md:mr-4 md:mb-0 md:w-auto focus:outline-none hover:bg-blue-800">Stream Now </a>
+                <a href="/" aria-label="" class="group inline-flex items-center font-semibold text-white"
+                >Watch how it works
+                  <svg xmlns="http://www.w3.org/2000/svg" class="group-hover:translate-x-2 ml-4 h-6 w-6 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="relative hidden lg:ml-32 lg:block lg:w-1/2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto my-6 h-10 w-10 animate-bounce rounded-full bg-blue-50 p-2 lg:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16 17l-4 4m0 0l-4-4m4 4V3" />
+              </svg>
+              <div class="abg-orange-400 w-fit rounded-[6rem] mx-auto overflow-hidden rounded-tl-none rounded-br-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="absolute -left-10 -top-20 h-28 w-28 rounded-xl text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 -bottom-20 h-28 w-28 rounded-xl text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" clip-rule="evenodd" />
+                </svg>
+                <div class="flex w-96 flex-wrap">
+                  <div class="h-48 w-1/2 rounded-full rounded-br-none bg-red-400"></div>
+                  <div class="rounded-[6rem] h-48 w-1/2 rounded-tl-none rounded-br-none bg-violet-400"></div>
+                  <div class="h-48 w-1/2 rounded-full rounded-b-none rounded-br-none bg-yellow-400"></div>
+                  <div class="h-48 w-1/2 rounded-full rounded-t-none rounded-br-none bg-indigo-600"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
+      <section class="w-screen py-10 how-we-make-youprofit">
 
-      {/* How it works from here  */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">How it Works</h2>
+        <h1 class="mb-12 text-center font-sans text-5xl font-bold">How we make you profitable</h1>
 
-          <p className="mb-12 text-lg text-gray-700">
-            Yaper is built by credit card enthusiasts for maximizing the benefits from credit cards
-          </p>
+        <div class="mx-auto grid max-w-screen-lg grid-cols-1 gap-5 p-5 sm:grid-cols-2 md:grid-cols-3 lg:gap-10">
 
-          <div className="grid gap-8 md:grid-cols-3">
-            <div className="p-6 bg-gray-100 rounded-lg shadow-md">
-              <div className="mb-4">
-                <img src="order.png" alt="Order for Others" className="mx-auto" />
-              </div>
+          <article class="group h-full overflow-hidden rounded-lg border-2 border-gray-200 border-opacity-60 shadow-lg">
+            {/* <img class="w-full transform object-cover object-center transition duration-500 ease-in-out group-hover:scale-105 md:h-36 lg:h-48" src="https://images.unsplash.com/photo-1611002214172-792c1f90b59a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw3fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60" alt="blog" /> */}
 
-              <h3 className="text-xl font-semibold mb-2">Order for Others</h3>
-              <p className="text-gray-600">
-                Order for shoppers on shopping platforms using discount available on your card
-              </p>
+            <iframe className='w-full bg-gray-800 transform object-cover object-center transition duration-500 ease-in-out group-hover:scale-105 md:h-36 lg:h-48' src="https://lottie.host/embed/a9f551cd-38d1-4811-aa01-28ca4714cfd3/79E6c1d6nK.json"></iframe>
 
+            <h2 class="title-font inline-block cursor-pointer px-6 pt-4 pb-1 text-xs font-semibold uppercase tracking-widest text-orange-600 hover:font-bold">Cities</h2>
+            <div class="py-1 px-6">
+              <h1 class="title-font mb-3 inline-block cursor-pointer text-xl capitali font-extrabold tracking-wide text-gray-800">How to get around in New York</h1>
+              <p class="line-clamp-6 mb-3 cursor-pointer overflow-hidden leading-relaxed text-gray-500">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil, maxime. Accusamus qui incidunt est rem at corrupti, earum fugiat iure.</p>
             </div>
-            <div className="p-6 bg-gray-100 rounded-lg shadow-md">
-              <div className="mb-4">
-                <img src="update.png" alt="Update Order Details" className="mx-auto" />
+            <div class="flex flex-wrap items-center justify-between px-6 pt-1 pb-4">
+              <div class="flex flex-wrap text-sm text-gray-500">
+                <span class="mr-1">Oct 30, 2022</span>
+                <span class="">· 9 min read</span>
               </div>
-
-              <h3 className="text-xl font-semibold mb-2">Update Order Details</h3>
-              <p className="text-gray-600">
-                Update order, tracking, and delivery details on the app
-              </p>
-            </div>
-
-            <div className="p-6 bg-gray-100 rounded-lg shadow-md">
-              <div className="mb-4">
-                <img src="receive.png" alt="Receive Cash" className="mx-auto" />
-              </div>
-
-              <h3 className="text-xl font-semibold mb-2">Receive Cash</h3>
-
-              <p className="text-gray-600">
-                Get cash in your bank account after the order is delivered to the shopper
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      {/* trending offers section from here */}
-      <section className="py-16 bg-black text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Trending Offers</h2>
-          <p className="mb-8 text-lg text-gray-400">
-            Check out the latest trending offers and start your rewarding journey
-          </p>
-          <div className="relative flex items-center justify-center">
-
-            {/* Previous Button */}
-            <button
-              onClick={prevOffer}
-              className="absolute left-0 z-10 p-2 bg-yellow-500 rounded-full focus:outline-none"
-            >
-              &#9664;
-            </button>
-
-            {/* Offer Card */}
-            <div className={`p-6 mx-2 rounded-lg shadow-md flex items-center ${offers[current].bgColor}`}>
-              {/* <img src={offers[current]} alt={offers[current].title} className="w-12 h-12 mr-4" /> */}
-              <div className="text-left">
-                <h3 className="text-xl font-semibold">{offers[current].title}</h3>
-                <p>{offers[current].description}</p>
-                <p className="text-sm mt-2 text-gray-200">{offers[current].details}</p>
+              <div class="mt-1">
+                <span class="mr-3 ml-auto inline-flex items-center py-1 pr-3 text-sm leading-none text-gray-400 md:ml-0 lg:ml-auto">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                  </svg>
+                  3.5K
+                </span>
               </div>
             </div>
+          </article>
 
+          <article class="group h-full overflow-hidden rounded-lg border-2 border-gray-200 border-opacity-60 shadow-lg">
+            {/* <img class="w-full transform object-cover object-center transition duration-500 ease-in-out group-hover:scale-105 md:h-36 lg:h-48" src="https://images.unsplash.com/photo-1660569883128-765b7c16f731?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60" alt="blog" /> */}
 
-            {/* Next Button */}
+            <iframe className='w-full bg-blue-900 transform object-cover object-center transition duration-500 ease-in-out group-hover:scale-105 md:h-36 lg:h-48' src="https://lottie.host/embed/080c36e3-1d20-4cab-9844-3197d747a3e9/M3M5do2c8v.json"></iframe>
 
-            <button
-              onClick={nextOffer}
-              className="absolute right-0 z-10 p-2 bg-yellow-500 rounded-full focus:outline-none"
-            >
-              &#9654;
-            </button>
-
-
-          </div>
-        </div>
-      </section>
-
-
-      {/* Safety guides from here  */}
-      <CardComponent />
-
-
-      {/* review section from here */}
-
-      <section>
-
-        <div className="container mx-auto px-4 text-center">
-
-          <h2 className="text-3xl font-bold mb-8">What our Users are Saying about us?</h2>
-          <p className="mb-2 text-lg text-gray-400">
-            Read what our users are saying about the app on the Google Play store and the App Store
-          </p>
-
-          <div className="relative flex items-center justify-center">
-            <div>
-              <ReviewPage />
+            <h2 class="title-font inline-block cursor-pointer px-6 pt-4 pb-1 text-xs font-semibold uppercase tracking-widest text-orange-600 hover:font-bold">Cities</h2>
+            <div class="py-1 px-6">
+              <h1 class="title-font mb-3 inline-block cursor-pointer text-xl capitali font-extrabold tracking-wide text-gray-800">How to get around in New York</h1>
+              <p class="line-clamp-6 mb-3 cursor-pointer overflow-hidden leading-relaxed text-gray-500">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil, maxime. Accusamus qui incidunt est rem at corrupti, earum fugiat iure.</p>
             </div>
-          </div>
+            <div class="flex flex-wrap items-center justify-between px-6 pt-1 pb-4">
+              <div class="flex flex-wrap text-sm text-gray-500">
+                <span class="mr-1">Oct 30, 2022</span>
+                <span class="">· 9 min read</span>
+              </div>
+              <div class="mt-1">
+                <span class="mr-3 ml-auto inline-flex items-center py-1 pr-3 text-sm leading-none text-gray-400 md:ml-0 lg:ml-auto">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                  </svg>
+                  3.5K
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <article class="group h-full overflow-hidden rounded-lg border-2 border-gray-200 border-opacity-60 shadow-lg">
+            {/* <img class="w-full transform object-cover object-center transition duration-500 ease-in-out group-hover:scale-105 md:h-36 lg:h-48" src="https://images.unsplash.com/photo-1660548311281-61e57dad92e3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60" alt="blog" /> */}
+
+            <iframe className='w-full bg-red-900 transform object-cover object-center transition duration-500 ease-in-out group-hover:scale-105 md:h-36 lg:h-48' src="https://lottie.host/embed/62a6fa38-8c61-4ddf-80c3-c9ac9a9afa76/gHBejt6e9K.json"></iframe>
+            <h2 class="title-font inline-block cursor-pointer px-6 pt-4 pb-1 text-xs font-semibold uppercase tracking-widest text-orange-600 hover:font-bold">Cities</h2>
+            <div class="py-1 px-6">
+              <h1 class="title-font mb-3 inline-block cursor-pointer text-xl capitali font-extrabold tracking-wide text-gray-800">How to get around in New York</h1>
+              <p class="line-clamp-6 mb-3 cursor-pointer overflow-hidden leading-relaxed text-gray-500">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil, maxime. Accusamus qui incidunt est rem at corrupti, earum fugiat iure.</p>
+            </div>
+            <div class="flex flex-wrap items-center justify-between px-6 pt-1 pb-4">
+              <div class="flex flex-wrap text-sm text-gray-500">
+                <span class="mr-1">Oct 30, 2022</span>
+                <span class="">· 9 min read</span>
+              </div>
+              <div class="mt-1">
+                <span class="mr-3 ml-auto inline-flex items-center py-1 pr-3 text-sm leading-none text-gray-400 md:ml-0 lg:ml-auto">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                  </svg>
+                  3.5K
+                </span>
+              </div>
+            </div>
+          </article>
+
         </div>
 
       </section>
 
-      {/* end section */}
+      <div className='grow graph'>
+        <section class="relative overflow-hidden bg-gray-100 py-12 sm:py-16 lg:py-20">
+          <div class="absolute h-72 w-72 scale-125 -right-8 -bottom-10">
+            <div class="absolute h-60 w-60 rounded-2xl border-4 border-blue-600"></div>
+            <div class="absolute h-60 w-60 translate-x-3 translate-y-3 rounded-2xl border-4 border-blue-600"></div>
+            <div class="absolute h-60 w-60 translate-x-6 translate-y-6 rounded-2xl border-4 border-blue-600"></div>
+          </div>
+          <div class="mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="sm:text-center">
+              <h2 class="text-3xl font-semibold leading-7 text-gray-900 sm:text-4xl xl:text-5xl">
+                We are <br class="sm:hidden" />
+                growing rapidly
+              </h2>
+              <hr class="mt-4 h-1.5 w-32 border-none bg-blue-600 sm:mx-auto sm:mt-8" />
+            </div>
 
-      <div class=" flex flex-col mt-0 md:flex-row">
-        <div class="flex-1 mt-0 p-4 items-center justify-center">
-          <h1 class="text-2xl font-bold mb-2 my-10">Don't have the Right Credit Card?</h1>
-          <p class="mb-2">Don't worry! Our platform, Grab Credit Cards</p>
-          <p class="mb-2">would help you get the most suitable card</p>
-          <p class="mb-2">which you can use to earn Cash and Rewards
-          </p>
-        </div>
-        <div class="flex-1 p-4">
-          <img src="./credit.png" alt="Placeholder Image" class="w-full h-auto object-cover" />
-        </div>
+            <div class="mx-auto mt-20 grid max-w-screen-lg grid-cols-1 gap-x-8 gap-y-12 text-center sm:text-left md:grid-cols-3">
+              <div class="grow-card backdrop-blur-lg relative mb-3 rounded-3xl border bg-white/70 px-12 py-10 text-left shadow lg:px-12">
+                <h3 class="relative text-5xl font-black text-blue-600">25M</h3>
+                <p class="relative mt-5 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores doloremque vel</p>
+              </div>
+
+              <div class="backdrop-blur-lg relative mb-3 rounded-3xl border bg-white/70 px-12 py-10 text-left shadow lg:px-12">
+                <p class="relative text-5xl font-black text-blue-600">51%</p>
+                <p class="relative mt-5 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores doloremque vel</p>
+              </div>
+
+              <div class="backdrop-blur-lg relative mb-3 rounded-3xl border bg-white/70 px-12 py-10 text-left shadow lg:px-12">
+                <p class="relative m-0 text-5xl font-black text-blue-600">8529+</p>
+                <p class="relative mt-5 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores doloremque vel</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
       </div>
+
+
+
+      <div className='featured product'>
+        <section class="bg-green-100 py-12 text-gray-700 sm:py-16 lg:py-20">
+          <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+            <div class="mx-auto max-w-md text-center">
+              <h2 class="font-serif text-2xl font-bold sm:text-3xl">Our featured Profit !!! </h2>
+              <p class="mt-4 text-base text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus faucibus massa dignissim tempus.</p>
+            </div>
+
+            <div class="mt-10 grid grid-cols-2 gap-6 lg:mt-16 lg:grid-cols-4 lg:gap-4">
+              <article class="relative">
+                <div class="aspect-square overflow-hidden">
+                  <img class="group-hover:scale-125 h-full w-full object-cover transition-all duration-300" src="./iphone.jpg" alt="" />
+                </div>
+                <div class="absolute top-0 m-1 rounded-full bg-white">
+                  <p class="text-[10px] rounded-full bg-black p-1 font-bold uppercase tracking-wide text-white sm:px-3 sm:py-1">Sale</p>
+                </div>
+                <div class="mt-4 flex items-start justify-between">
+                  <div class="">
+                    <h3 class="text-xs font-semibold sm:text-sm md:text-base">
+                      <a href="#" title="" class="cursor-pointer">
+                        Arabian Musk
+                        <span class="absolute" aria-hidden="true"></span>
+                      </a>
+                    </h3>
+                    <div class="mt-2 flex items-center">
+                      <svg class="block h-3 w-3 align-middle text-black sm:h-4 sm:w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" class=""></path>
+                      </svg>
+                      <svg class="block h-3 w-3 align-middle text-black sm:h-4 sm:w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" class=""></path>
+                      </svg>
+                      <svg class="block h-3 w-3 align-middle text-black sm:h-4 sm:w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" class=""></path>
+                      </svg>
+                      <svg class="block h-3 w-3 align-middle text-black sm:h-4 sm:w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" class=""></path>
+                      </svg>
+                      <svg class="block h-3 w-3 align-middle text-gray-400 sm:h-4 sm:w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" class=""></path>
+                      </svg>
+                    </div>
+                  </div>
+
+                  <div class="text-right">
+                    <del class="mt-px text-xs font-semibold text-gray-600 sm:text-sm"> $79.00 </del>
+                    <p class="text-xs font-normal sm:text-sm md:text-base">$99.00</p>
+                  </div>
+                </div>
+              </article>
+
+              <article class="relative">
+                <div class="aspect-square overflow-hidden">
+                  <img class="group-hover:scale-125 h-full w-full object-cover transition-all duration-300" src="./iphone.jpg" alt="" />
+                </div>
+                <div class="mt-4 flex items-start justify-between">
+                  <div class="">
+                    <h3 class="text-xs font-semibold sm:text-sm md:text-base">
+                      <a href="#" title="" class="cursor-pointer">
+                        Albanian Essence
+                        <span class="absolute" aria-hidden="true"></span>
+                      </a>
+                    </h3>
+                    <div class="mt-2 flex items-center">
+                      <svg class="block h-3 w-3 align-middle text-black sm:h-4 sm:w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" class=""></path>
+                      </svg>
+                      <svg class="block h-3 w-3 align-middle text-black sm:h-4 sm:w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" class=""></path>
+                      </svg>
+                      <svg class="block h-3 w-3 align-middle text-black sm:h-4 sm:w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" class=""></path>
+                      </svg>
+                      <svg class="block h-3 w-3 align-middle text-black sm:h-4 sm:w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" class=""></path>
+                      </svg>
+                      <svg class="block h-3 w-3 align-middle text-black sm:h-4 sm:w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" class=""></path>
+                      </svg>
+                    </div>
+                  </div>
+
+                  <div class="text-right">
+                    <p class="text-xs font-normal sm:text-sm md:text-base">$299.00</p>
+                  </div>
+                </div>
+              </article>
+
+              <article class="relative">
+                <div class="aspect-square overflow-hidden">
+                  <img class="group-hover:scale-125 h-full w-full object-cover transition-all duration-300" src="./iphone.jpg" alt="" />
+                </div>
+                <div class="mt-4 flex items-start justify-between">
+                  <div class="">
+                    <h3 class="text-xs font-semibold sm:text-sm md:text-base">
+                      <a href="#" title="" class="cursor-pointer">
+                        Siberian Perfum
+                        <span class="absolute" aria-hidden="true"></span>
+                      </a>
+                    </h3>
+                    <div class="mt-2 flex items-center">
+                      <svg class="block h-3 w-3 align-middle text-black sm:h-4 sm:w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" class=""></path>
+                      </svg>
+                      <svg class="block h-3 w-3 align-middle text-black sm:h-4 sm:w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" class=""></path>
+                      </svg>
+                      <svg class="block h-3 w-3 align-middle text-black sm:h-4 sm:w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" class=""></path>
+                      </svg>
+                      <svg class="block h-3 w-3 align-middle text-black sm:h-4 sm:w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" class=""></path>
+                      </svg>
+                      <svg class="block h-3 w-3 align-middle text-black sm:h-4 sm:w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" class=""></path>
+                      </svg>
+                    </div>
+                  </div>
+
+                  <div class="text-right">
+                    <p class="text-xs font-normal sm:text-sm md:text-base">$49.00</p>
+                  </div>
+                </div>
+              </article>
+
+              <article class="relative">
+                <div class="aspect-square overflow-hidden">
+                  <img class="group-hover:scale-125 h-full w-full object-cover transition-all duration-300" src="./iphone.jpg" alt="" />
+                </div>
+                <div class="mt-4 flex items-start justify-between">
+                  <div class="">
+                    <h3 class="text-xs font-semibold sm:text-sm md:text-base">
+                      <a href="#" title="" class="cursor-pointer">
+                        Danish Levoune
+                        <span class="absolute" aria-hidden="true"></span>
+                      </a>
+                    </h3>
+                    <div class="mt-2 flex items-center">
+                      <svg class="block h-3 w-3 align-middle text-black sm:h-4 sm:w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" class=""></path>
+                      </svg>
+                      <svg class="block h-3 w-3 align-middle text-black sm:h-4 sm:w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" class=""></path>
+                      </svg>
+                      <svg class="block h-3 w-3 align-middle text-black sm:h-4 sm:w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" class=""></path>
+                      </svg>
+
+                      <svg class="block h-3 w-3 align-middle text-black sm:h-4 sm:w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" class=""></path>
+                      </svg>
+
+                      <svg class="block h-3 w-3 align-middle text-gray-400 sm:h-4 sm:w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" class=""></path>
+                      </svg>
+                    </div>
+                  </div>
+
+                  <div class="text-right">
+                    <p class="text-xs font-normal sm:text-sm md:text-base">$79.00</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      
+
+      <NewCarousal />
+
+      
+
 
     </div>
   )
 }
 
-
-export default HomePage
+export default NewHomePage
