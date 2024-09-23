@@ -1,9 +1,12 @@
 import React, { useState , useEffect } from 'react';
 import axios from 'axios';
+import { useLocation } from 'react-router-dom';
+
 
 const Navbar = () => {
 
   const [iuser, setIuser ] = useState(true);
+  const local = useLocation().pathname;
 
   useEffect(() => {
     axios.get('https://back-ecom-six.vercel.app/user/me', {withCredentials: true})
@@ -14,7 +17,7 @@ const Navbar = () => {
       }else if(msg == "Email verifed !"){
         setIuser(false)
       }
-    })
+    }, [local])
 
 
     

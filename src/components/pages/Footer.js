@@ -99,12 +99,9 @@ const Footer = () => {
                   </ul>
 
                   <ul class="mt-8 mr-4 flex-grow space-y-3 whitespace-nowrap md:mt-0">
-                    <li><strong>Guides</strong></li>
-                    <li><a href=""> Why Us? </a></li>
-                    <li><a href=""> Blog </a></li>
-                    <li><a href=""> Webinars </a></li>
-                    <li><a href=""> Marketing </a></li>
-                    <li><a href=""> Media </a></li>
+                    <li><strong>Legal</strong></li>
+                    <li><a href=""> Terms of Service </a></li>
+
                   </ul>
                 </nav>
                 <div class="border-t border-slate-500 py-4 lg:col-span-12">
