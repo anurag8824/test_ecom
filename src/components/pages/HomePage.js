@@ -1,7 +1,29 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import NewCarousal from './NewCarousal';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
+
 
 const NewHomePage = () => {
+
+  const navigate = useNavigate();
+
+
+  useEffect(() => {
+    axios.get('https://back-ecom-six.vercel.app/user/me', {withCredentials: true})
+    .then((res) =>{
+      const msg = res.data.msg
+      if(msg == "Email not verifed !"){
+        alert("Please Verify your email")
+      }else if(msg == "Email verifed !"){
+        navigate('/deals');
+      }
+    })
+  })
+
+
+
   return (
     <div>
       <div class=" bg-gray-800">
@@ -362,5 +384,6 @@ const NewHomePage = () => {
     </div>
   )
 }
+
 
 export default NewHomePage
