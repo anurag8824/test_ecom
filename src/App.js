@@ -13,10 +13,12 @@ import Contact from './components/pages/FooterPages/Contact';
 import FAQ from './components/pages/FooterPages/FAQ';
 import PrivacyPolicy from './components/pages/FooterPages/PrivacyPolicy';
 import TOS from './components/pages/FooterPages/TOS';
+import Check from './components/check';
 
 
 
 function App() {
+  
   return (
     <BrowserRouter>
       <Routes>
@@ -26,13 +28,16 @@ function App() {
           <Route path="sign-in" element={<SignPage />} />
           <Route path="user-form" element={<UserForm />} />
           <Route path="profile" element={<ProfilePage />} />
-          <Route path="product" element={<ProductPage />} />
-          <Route path="single-product" element={<SingleProduct />} />
+          <Route path="product/:id" element={<ProductPage />} />
+
+          <Route path="single-product/:id" element={<SingleProduct />} />
           <Route path="about-us" element={<AboutUs />} />
           <Route path="contact" element={<Contact />} />
           <Route path="faq" element={<FAQ />} />
           <Route path="privacy-policy" element={<PrivacyPolicy />} />
           <Route path="terms-of-service" element={<TOS />} />
+          <Route path="check" element={<Check />} />
+
 
 
 

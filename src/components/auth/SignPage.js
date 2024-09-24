@@ -239,6 +239,7 @@ const SignPage = () => {
       .then((res) => {
         const msg = res.data.msg;
         if (msg === "Email Doesn't match" || msg === "Otp Doesn't Match") {
+          console.log(res)
           alert(res.data);
         } else {
           navigate('/user-form');

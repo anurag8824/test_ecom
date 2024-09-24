@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import Name from '../CopyBoard/Name'
-import Address from '../CopyBoard/Address'
-import PinCode from '../CopyBoard/PinCode'
+
 import { json } from 'react-router-dom'
+import Name from './CopyBoard/Name';
+import Address from './CopyBoard/Address';
+import PinCode from './CopyBoard/PinCode';
 
 
 
-const SingleProduct = () => {
+const Check = () => {
 
     // for set value 
     const [order, setOrder] = useState("");
@@ -166,7 +167,7 @@ const SingleProduct = () => {
 
 
                                 <a href="https://pagedone.io/" class="pb-3 flex items-center font-medium  ">
-                                    <span class="w-6 h-6 text-white bg-indigo-600 border border-gray-200 rounded-full flex justify-center items-center mr-3 text-sm  lg:w-8 lg:h-8">1</span>
+                                <span class="w-6 h-6 text-white bg-indigo-600 border border-gray-200 rounded-full flex justify-center items-center mr-3 text-sm  lg:w-8 lg:h-8">1</span>
                                     <div class="block">
                                         <h4 class="text-base  text-indigo-600">Accepted</h4>
                                     </div>
@@ -420,4 +421,4 @@ const SingleProduct = () => {
     )
 }
 
-export default SingleProduct
+export default Check
