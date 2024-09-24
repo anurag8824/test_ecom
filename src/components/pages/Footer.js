@@ -100,7 +100,9 @@ const Footer = () => {
 
                   <ul class="mt-8 mr-4 flex-grow space-y-3 whitespace-nowrap md:mt-0">
                     <li><strong>Legal</strong></li>
-                    <li><a href=""> Terms of Service </a></li>
+                    <li><a href="terms-of-service"> Terms of Service </a></li>
+                    <li><a href="privacy-policy"> Privacy Policy </a></li>
+
 
                   </ul>
                 </nav>

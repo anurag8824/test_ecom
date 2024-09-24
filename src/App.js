@@ -11,6 +11,8 @@ import SingleProduct from './components/pages/SingleProduct';
 import AboutUs from './components/pages/FooterPages/AboutUs';
 import Contact from './components/pages/FooterPages/Contact';
 import FAQ from './components/pages/FooterPages/FAQ';
+import PrivacyPolicy from './components/pages/FooterPages/PrivacyPolicy';
+import TOS from './components/pages/FooterPages/TOS';
 
 
 
@@ -29,6 +31,9 @@ function App() {
           <Route path="about-us" element={<AboutUs />} />
           <Route path="contact" element={<Contact />} />
           <Route path="faq" element={<FAQ />} />
+          <Route path="privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="terms-of-service" element={<TOS />} />
+
 
 
 

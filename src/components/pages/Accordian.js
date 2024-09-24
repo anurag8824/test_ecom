@@ -30,13 +30,13 @@ const Accordian = () => {
 
             <hr class="h-px my-1 bg-gray-200 border-0 dark:bg-gray-700"></hr>
 
-            <a href="#" class="inline-flex items-center justify-center px-5 py-2 font-medium text-sm text-center text-black rounded-lg hover:underline  focus:ring-4 focus:ring-blue-300 ">
+            <a href="/terms-of-service" class="inline-flex items-center justify-center px-5 py-2 font-medium text-sm text-center text-black rounded-lg hover:underline  focus:ring-4 focus:ring-blue-300 ">
                 Terms Of Service
             </a>
             <hr class="h-px my-1 bg-gray-200 border-0 dark:bg-gray-700"></hr>
 
 
-            <a href="#" class="inline-flex items-center justify-center px-5 py-2 font-medium text-sm text-center text-black rounded-lg hover:underline  focus:ring-4 focus:ring-blue-300 ">
+            <a href="privacy-policy" class="inline-flex items-center justify-center px-5 py-2 font-medium text-sm text-center text-black rounded-lg hover:underline  focus:ring-4 focus:ring-blue-300 ">
                 Privacy Policy
             </a>
             <hr class="h-px my-1 bg-gray-200 border-0 dark:bg-gray-700"></hr>
