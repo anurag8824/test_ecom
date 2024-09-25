@@ -68,7 +68,7 @@ const Footer = () => {
                   </ul>
                 </nav>
                 <div class="border-t border-slate-500 py-4 lg:col-span-12">
-                  <p class="text-center text-sm text-gray-400">(2022) In United States copyright law, a copyright notice is a notice of statutorily prescribed form that informs users.</p>
+                  <p class="text-center text-sm text-gray-400">(2024) In India copyright law, a copyright notice is a notice of statutorily prescribed form that informs users.</p>
                 </div>
               </div>
             </footer>
@@ -78,15 +78,15 @@ const Footer = () => {
           {/* Mobile View */}
           <div className="fixed bottom-0 left-0 w-full flex md:hidden justify-around items-center border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 py-4">
             <a href="/" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-              <FaHome size={24} />
+              <FaHome size={36} />
               <span className="sr-only">Home</span>
             </a>
             <a href="/deals" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-              <FaTags size={24} />
+              <FaTags size={36} />
               <span className="sr-only">My Order</span>
             </a>
             <a href="/profile" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-              <FaUser size={24} />
+              <FaUser size={36} />
               <span className="sr-only">Wallet</span>
             </a>
           </div>

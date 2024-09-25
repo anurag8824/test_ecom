@@ -1,37 +1,37 @@
-import React, { useState , useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useLocation } from 'react-router-dom';
 
 
 const Navbar = () => {
 
-  const [iuser, setIuser ] = useState(true);
+  const [iuser, setIuser] = useState(true);
   const local = useLocation().pathname;
 
   useEffect(() => {
-    axios.get('https://back-ecom-six.vercel.app/user/me', {withCredentials: true})
-    .then((res) =>{
-      const msg = res.data.msg
-      if(msg == "Email not verifed !"){
-        alert("Please Verify your email")
-      }else if(msg == "Email verifed !"){
-        setIuser(false)
-      }
-    }, [local])
+    axios.get('https://back-ecom-six.vercel.app/user/me', { withCredentials: true })
+      .then((res) => {
+        const msg = res.data.msg
+        if (msg == "Email not verifed !") {
+          alert("Please Verify your email")
+        } else if (msg == "Email verifed !") {
+          setIuser(false)
+        }
+      }, [local])
 
 
-    
-  
-    
-  }, )
 
 
-  
+
+  },)
+
+
+
 
 
   return (
     <>
-      
+
       <div className='bg-gray-800 sticky top-0 w-[100%] z-50'>
 
         <header className="bg-gray-800 top-0 w-[100%] z-50 relative flex max-w-screen-xl flex-col overflow-hidden px-4 py-4 text-blue-900 md:mx-auto md:flex-row md:items-center">
@@ -44,17 +44,26 @@ const Navbar = () => {
 
 
           {/* <input type="checkbox" class="peer hidden" id="navbar-open" /> */}
-          
+
           <div class={`absolute right-7 top-5 cursor-pointer text-blue-600 ${iuser ? "block" : "hidden"} `} >
-          <a href='/sign-in' class="rounded-full border-2 border-white px-6 py-1 font-medium text-white transition-colors hover:bg-white hover:text-gray-700">Login</a>
+            <a href='/sign-in' class="rounded-full border-2 border-white px-6 py-1 font-medium text-white transition-colors hover:bg-white hover:text-gray-700">Login</a>
           </div>
 
 
 
-          <div class={`absolute right-7 top-5 cursor-pointer text-blue-600 ${iuser ? "hidden" : "block"} `} >
-          <a href='/profile' class="rounded-full border-2 border-white px-6 py-1 font-medium text-white transition-colors hover:bg-white hover:text-gray-700">Profile</a>
-          
-          </div>          
+          <div class={`absolute right-7 top-3 cursor-pointer text-blue-600 ${iuser ? "hidden" : "block"} `} >
+            {/* <a href='/profile' class="rounded-full border-2 border-white px-6 py-1 font-medium text-white transition-colors hover:bg-white hover:text-gray-700">Profile</a> */}
+
+            <a href='/profile' className="">
+            <img
+              src="/profilegif.gif"
+              alt="GIF Icon"
+              className="w-12 h-12"
+            /></a>
+
+
+
+          </div>
 
         </header>
       </div>

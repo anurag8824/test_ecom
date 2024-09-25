@@ -42,7 +42,7 @@ const NewHomePage = () => {
                   We make you earn
                   <span class="my-1 inline-block border-b-8 border-white bg-orange-400 px-4 font-bold text-white">different</span>
                 </h2>
-                <p class="text-base text-gray-400">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque it.</p>
+                <p class="text-base text-gray-400">"Shop. Earn. Repeat – Unlock Rewards and Cashback with Every Purchase!"</p>
               </div>
               <div class="mt-10 flex flex-col items-center md:flex-row">
                 <a href='/sign-in' class="mb-3 inline-flex h-12 w-full items-center justify-center rounded bg-blue-700 px-6 font-medium tracking-wide text-white shadow-md transition md:mr-4 md:mb-0 md:w-auto focus:outline-none hover:bg-blue-800">Earn Now </a>
@@ -80,6 +80,10 @@ const NewHomePage = () => {
       <section id='works' class="w-screen py-10 how-we-make-youprofit">
 
         <h1 class="mb-12 text-center font-sans text-5xl font-bold">How we make you profitable</h1>
+
+       
+
+
 
         <div class="mx-auto grid max-w-screen-lg grid-cols-1 gap-5 p-5 sm:grid-cols-2 md:grid-cols-3 lg:gap-10">
 
