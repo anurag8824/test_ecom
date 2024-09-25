@@ -15,7 +15,7 @@
 //     const navigate = useNavigate();
 
 //     const checking = Email.length > 0
-    
+
 
 
 
@@ -59,7 +59,7 @@
 //                 alert('Please Enter Your Email Address');
 //             }
 //         }
-   
+
 
 
 
@@ -158,7 +158,7 @@
 // }
 
 // export default SignPage
-  
+
 // old code upward before otp uatonext
 
 import React, { useState, useRef } from 'react';
@@ -254,7 +254,12 @@ const SignPage = () => {
     <div>
       <div className="w-full max-w-6xl mx-auto px-4 md:px-6 py-24">
         <div className={`justify-center ${state ? "block" : "hidden"}`}>
-          <form className="max-w-sm mx-auto">
+        
+          <form className="max-w-sm mx-auto p-4 rounded-lg border">
+            <div class="mx-auto mb-4 space-y-3">
+              <h1 class="text-center text-3xl font-bold text-gray-700">Sign in</h1>
+              <p class="text-gray-500">Verify Email to access your account</p>
+            </div>
             <div className="mb-5">
               <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Enter Your email</label>
               <input type="email" id="email" onChange={e => setEmail(e.target.value)}
@@ -268,14 +273,20 @@ const SignPage = () => {
           </form>
         </div>
 
+
+
+
+
+
+
         <div className={`justify-center ${state ? "hidden" : "block"}`}>
-          <div className="max-w-md mx-auto text-center bg-white px-4 sm:px-8 py-10 rounded-xl">
+          <div className="max-w-md p-4  border mx-auto  text-center bg-white px-4 sm:px-8 py-10 rounded-xl">
             <header className="mb-8">
               <p className="text-[15px] text-slate-500">Enter the 4-digit verification code that was sent to your email id.</p>
             </header>
 
             <form id="otp-form" onSubmit={handleSubmit}>
-              <div className="flex items-center justify-center gap-3">
+              <div className="flex items-center  justify-center gap-3">
                 {otp.map((value, index) => (
                   <input
                     key={index}
@@ -300,6 +311,7 @@ const SignPage = () => {
             <div className="text-sm text-slate-500 mt-4">Didn't receive code? <a className="font-medium text-indigo-500 hover:text-indigo-600" href="#0">Resend</a></div>
           </div>
         </div>
+
       </div>
     </div>
   );

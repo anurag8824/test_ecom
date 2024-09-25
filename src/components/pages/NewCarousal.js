@@ -74,7 +74,7 @@ const NewCarousal = () => {
         {items.map((item, index) => (
           <div
             key={index}
-            className=" carousel-item mx-auto max-w-full flex min-w-full flex-shrink-0 rounded-xl border-2 border-gray-900 p-4 text-left text-gray-900 shadow-lg sm:p-8"
+            className=" carousel-item mx-auto max-w-full flex min-w-full flex-shrink-0 rounded-xl border border-gray-900 p-4 text-left text-gray-900 shadow-lg sm:p-8"
           >
             <img
               className="mr-5 block h-8 w-8 max-w-full text-left align-middle sm:h-16 sm:w-16"
