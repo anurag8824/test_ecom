@@ -20,56 +20,17 @@ const Footer = () => {
           <div className="hidden  md:flex md:justify-between">
 
 
-            {/* <div className="mb-6 md:mb-0">
-            <a href="#" className="flex items-center">
-              <img src="infralogo.png" className="h-8 me-3" alt="Company Logo" />
-              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Infayou Digital</span>
-            </a>
-          </div>
-          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-            <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">About Company</h2>
-              <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                <li className="mb-4">
-                  <a href="/about-us" className="hover:underline">About Us</a>
-                </li>
-                <li className="mb-4">
-                  <a href="/contact" className="hover:underline">Contact</a>
-                </li>
-                <li>
-                  <a href="faq" className="hover:underline">FAQ's</a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
-              <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                <li className="mb-4">
-                  <a href="#" className="hover:underline ">Github</a>
-                </li>
-                <li>
-                  <a href="#" className="hover:underline">Discord</a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
-              <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                <li className="mb-4">
-                  <a href="#" className="hover:underline">Privacy Policy</a>
-                </li>
-                <li>
-                  <a href="#" className="hover:underline">Terms &amp; Conditions</a>
-                </li>
-              </ul>
-            </div>
-          </div> */}
-
             <footer class="bg-slate-700">
               <div class="mx-auto grid text-gray-50 lg:grid-cols-12">
                 <div class="flex flex-col items-start border-r border-b border-slate-500 py-8 px-5 sm:flex-row sm:px-8 md:pt-12 lg:col-span-7 xl:pl-32 2xl:pl-40">
-                  <img class="w-40" src="/images/VlG3Gf3I1xy18sBfhC_5I.png" alt="" />
-                  <p class="pt-4 text-sm leading-6 tracking-wide sm:pl-10 sm:pt-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi iure voluptatibus nam fugiat incidunt quo repellendus deserunt temporibus dolores a.</p>
+                  
+                  <p class="pt-4 text-sm leading-6 tracking-wide sm:pl-3 sm:pt-0">Address-(Jaipur Office)</p>
+                  <p class="pt-4 text-sm leading-6 tracking-wide sm:pl-3 sm:pt-0">Near Sagar Enclave, Mangyawas Jaipur</p>
+                  <p class="pt-4 text-sm leading-6 tracking-wide sm:pl-3 sm:pt-0">(Delhi Office)</p>
+                  <p class="pt-4 text-sm leading-6 tracking-wide sm:pl-3 sm:pt-0">10/42-Nehru Nagar,Sethi House Delhi</p>
+                  <p class="pt-4 text-sm leading-6 tracking-wide sm:pl-3 sm:pt-0">(Allahabad Office)</p>
+                  <p class="pt-4 text-sm leading-6 tracking-wide sm:pl-3 sm:pt-0">729 Transport Nagar Allahabad</p>
+
                 </div>
                 <div class="px-5 py-8 sm:px-8 md:pt-14 lg:col-span-5 xl:pr-32 2xl:pr-40">
                   <p class="font-medium text-orange-500">Demo</p>

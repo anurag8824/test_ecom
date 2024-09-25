@@ -119,34 +119,15 @@ const SingleProduct = () => {
 
                     <div class="md:flex grid-cols-2 gap-24">
 
-                        <div class="immagess..">
+                        <div class=" pt-8 immagess..">
 
                             <div class="lg:flex lg:items-start">
-                                <div class="lg:order-2 lg:ml-5 sm:items-center">
+                                {/* <div class="lg:order-2 lg:ml-5 sm:items-center"> */}
                                     <div class="max-w-xl overflow-hidden rounded-lg md:items-center ">
-                                        <img class="h-full w-48 max-w-full object-cover" src="./motorola.png" alt="" />
+                                        <img class="h-full w-48 max-w-full object-cover" src="/motorola.png" alt="" />
                                     </div>
 
-                                </div>
-
-
-
-
-
-
-                                {/* if we want three images then above will working */}
-
-                                <div class="mt-2 w-full lg:order-1 lg:w-32 lg:flex-shrink-0">
-                                    <div class="flex flex-row items-start lg:flex-col">
-                                        <button type="button" class="flex-0 aspect-square mb-3 h-20 overflow-hidden rounded-lg border-2 border-gray-900 text-center">
-                                            <img class="h-full w-full object-cover" src="./motorola.png" alt="" />
-                                        </button>
-                                    </div>
-                                </div>
-
-
-
-
+                                {/* </div> */}
 
                             </div>
 
@@ -286,8 +267,6 @@ const SingleProduct = () => {
 
                                         <input onChange={e => { setFlipdelivered(e.target.value) }} type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John" required />
                                     </div>
-
-
 
 
                                     <div className={`${tracked ? "block" : "hidden"} ml-1 text-sm font-medium pb-2 mt-0  text-gray-500`}>

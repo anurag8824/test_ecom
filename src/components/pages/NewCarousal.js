@@ -6,25 +6,25 @@ const NewCarousal = () => {
   const items = [
     {
       id: 1,
-      name: 'Diana Anderson',
-      date: 'July 18, 2022 at 10:36 AM',
-      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit!',
+      name: 'Anand Ramachandran',
+      date: 'SEP 18, 2024 at 10:36 AM',
+      text: 'Loved the app and support... Major benefits 1. Cashing credit card at negative rates 2. You have to pay your credit card bill after 30-45 days 3. You are basically helping someone buy cheap products by utilizing your credit card 4. Safe and secure.',
       likes: 12,
       image: 'profile.png',
     },
     {
       id: 2,
-      name: 'John Doe',
-      date: 'July 19, 2022 at 11:45 AM',
-      text: 'Another great piece of text for the carousel item.',
+      name: 'Krishna Kumar',
+      date: 'SEP 20, 2024 at 11:45 AM',
+      text: "Incredibles is really good I'm using it since 4months and I've earned 20-30k, customer service is good not the best but good it needs improvement but only problem is sometimes payment is delayed but never messed with with payment.",
       likes: 8,
       image: 'profile.png',
     },
     {
       id: 3,
-      name: 'Jane Smith',
-      date: 'July 20, 2022 at 12:50 PM',
-      text: 'Yet another great comment for the carousel.',
+      name: 'Anup Singh',
+      date: 'Sep 25, 2024 at 12:50 PM',
+      text: "like the business idea, it definitely works like charm, win win situation for both customer and card holder, Appreciate your hard work team Incredibles. This app should have option to store credentials for e-commerce site",
       likes: 15,
       image: 'profile.png',
     },
@@ -60,7 +60,7 @@ const NewCarousal = () => {
   }, [currentIndex, items.length]);
 
   return (
-    <div className="carousel overflow-hidden relative max-w-screen-sm mx-auto my-8">
+    <div className="carousel overflow-hidden relative max-w-screen-sm mx-auto my-6">
       <div
         ref={carouselRef}
         className={`carousel-inner flex transition-transform ${
@@ -82,14 +82,14 @@ const NewCarousal = () => {
               alt="Profile Picture"
             />
             <div className="w-full text-left">
-              <div className="mb-2 flex flex-col justify-between text-gray-900 sm:flex-row">
+              <div className="mb-1 flex flex-col justify-between text-gray-900 sm:flex-row">
                 <h3 className="font-medium">{item.name}</h3>
                 <time className="text-xs" dateTime="2022-11-13T20:00Z">
                   {item.date}
                 </time>
               </div>
               <p className="text-sm text-gray-900">{item.text}</p>
-              <div className="mt-5 flex items-center justify-between text-white">
+              <div className="mt-3 flex items-center justify-between text-white">
                 <button className="cursor-pointer py-2 px-8 text-center text-sm leading-tight transition-colors duration-150 ease-in-out hover:border-gray-500 rounded-lg bg-gray-900">
                   Reply
                 </button>

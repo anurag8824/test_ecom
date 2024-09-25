@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const DealsPage = () => {
 
-    const [showdeals, setShowdeals] = useState(true);
+    const [showdeals, setShowdeals] = useState(false);
     const [data, setData] = useState([])
 
     useEffect(() => {
@@ -11,6 +11,7 @@ const DealsPage = () => {
             .then((res) => {
                 const msg = res.data.msg;
                 if (msg == "0 Deals is live !") {
+                    setShowdeals(true);
                     console.log("No deals is live !");
                 } else {
                     setShowdeals(false);
@@ -20,11 +21,10 @@ const DealsPage = () => {
                     console.log(res);
                 }
 
-
             }).catch((err) => {
                 console.log(err);
             })
-    },[]);
+    }, []);
 
 
     return (
@@ -35,49 +35,53 @@ const DealsPage = () => {
 
             <div className={`${showdeals ? "block" : "hidden"} items-center text-center mt-10 text-red-600 mb-40 pt-8 pb-20`}>No deals is Live</div>
 
-            <div className={` ${showdeals ? "hidden" : "block"} grid grid-col-2 md:grid-cols-2 gap-4`}>
+            <section id='Projects' className={` ${showdeals ? "hidden" : "block"} w-96 mx-auto grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 justify-items-center justify-center gap-y-8 gap-x-96 mt-8 mb-36`}>
 
                 {data.map((deal) => {
-                    return (
-                    <div class=" mx-10 mt-10 mb-4 flex max-w-xs flex-col overflow-hidden border border-gray-100 bg-white ">
-                        <a class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl" href="/product">
-                            <img class="object-cover" src="./motorola.png" alt="product image" />
-                            <span class="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">{deal.
-                                OfferAmmount
-                            }</span>
-                            <span class="absolute top-0 right-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">{deal.
-                                Store
-                            }</span>
-                        </a>
+                    return (<div class="w-72 bg-gray-100 shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl hover:shadow-blue-300">
+                        <a href={`/product/${deal._id}`}>
+                            <div style={{ height: "20rem" }} className='w-72 '>
 
-                        <div class="mt-4 px-5 pb-5">
-                            <a href="/product">
-                                <h5 class="text-xl tracking-tight text-slate-900">{deal.DealTitle
-                                }</h5>
-                            </a>
-                            <div class="mt-2 mb-2 flex items-center justify-between">
-                                <p>
-                                    <span class="text-3xl font-bold text-slate-900">{deal.Price}</span>
-                                    {/* <span class="text-sm text-slate-900 line-through">$699</span> */}
-                                </p>
-
+                                <img src="motorola.png"
+                                    alt="Product"  class="w-72 object-cover rounded-t-xl" />
                             </div>
 
-                            <a href={`/product/${deal._id}`} class="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                                </svg>
-                                Buy</a
-                            >
+                            <div class="w-48 pt-4">
+                                <span class="text-black  pl-2 font-medium  uppercase text-xs">Earn ₹{deal.OfferAmmount}</span>
+                                <p class="text-gray-700  pt-4 pl-2 text-xs">on {deal.CardType} Bank Credit Cards</p>
+                                <p class="text-md  font-normal pt-1  pl-2  ">{deal.DealTitle}</p>
 
-                        </div>
-                    </div>)
+                                <div className='flex items-center pt-1'>
+                                    <div class="ml-2"><img width="12" height="12" src="https://img.icons8.com/color/48/rgb-circle-1--v1.png" alt="rgb-circle-1--v1" /></div>
+                                    <p class="text-xs truncate block pl-2 uppercase ">Variant- {deal.Variant}</p>
+                                </div>
+
+
+                                <div class="flex items-center pt-1 mb-2">
+                                    <p class="text-md pl-2 font-bold text-black cursor-auto my-1"> ₹{deal.Price}</p>
+
+                                    <div class="ml-2"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                        fill="currentColor" class="bi bi-bag-plus" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z" />
+                                        <path
+                                            d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
+                                    </svg></div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+
+
+
+                    )
                 })}
 
 
 
 
-                {/* second div  */}
+            </section>
 
 
 
@@ -85,7 +89,9 @@ const DealsPage = () => {
 
 
 
-            </div>
+
+
+
 
         </>
 

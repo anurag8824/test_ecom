@@ -11,15 +11,15 @@ const NewHomePage = () => {
 
 
   useEffect(() => {
-    axios.get('https://back-ecom-six.vercel.app/user/me', {withCredentials: true})
-    .then((res) =>{
-      const msg = res.data.msg
-      if(msg == "Email not verifed !"){
-        alert("Please Verify your email")
-      }else if(msg == "Email verifed !"){
-        navigate('/deals');
-      }
-    })
+    axios.get('https://back-ecom-six.vercel.app/user/me', { withCredentials: true })
+      .then((res) => {
+        const msg = res.data.msg
+        if (msg == "Email not verifed !") {
+          alert("Please Verify your email")
+        } else if (msg == "Email verifed !") {
+          navigate('/deals');
+        }
+      })
   })
 
 
@@ -36,17 +36,17 @@ const NewHomePage = () => {
                   <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 inline h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" clip-rule="evenodd" />
                   </svg>
-                  An agency for high growth startups
+                  An agency for high credit rewards !!!
                 </p>
                 <h2 class="mb-6 max-w-lg text-5xl font-bold leading-snug tracking-tight text-white sm:text-7xl sm:leading-snug">
-                  We make you look
+                  We make you earn
                   <span class="my-1 inline-block border-b-8 border-white bg-orange-400 px-4 font-bold text-white">different</span>
                 </h2>
                 <p class="text-base text-gray-400">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque it.</p>
               </div>
               <div class="mt-10 flex flex-col items-center md:flex-row">
-                <a href="/" class="mb-3 inline-flex h-12 w-full items-center justify-center rounded bg-blue-700 px-6 font-medium tracking-wide text-white shadow-md transition md:mr-4 md:mb-0 md:w-auto focus:outline-none hover:bg-blue-800">Stream Now </a>
-                <a href="/" aria-label="" class="group inline-flex items-center font-semibold text-white"
+                <a href='/sign-in' class="mb-3 inline-flex h-12 w-full items-center justify-center rounded bg-blue-700 px-6 font-medium tracking-wide text-white shadow-md transition md:mr-4 md:mb-0 md:w-auto focus:outline-none hover:bg-blue-800">Earn Now </a>
+                <a href="#works" aria-label="" class="group inline-flex items-center font-semibold text-white"
                 >Watch how it works
                   <svg xmlns="http://www.w3.org/2000/svg" class="group-hover:translate-x-2 ml-4 h-6 w-6 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -77,7 +77,7 @@ const NewHomePage = () => {
         </div>
       </div>
 
-      <section class="w-screen py-10 how-we-make-youprofit">
+      <section id='works' class="w-screen py-10 how-we-make-youprofit">
 
         <h1 class="mb-12 text-center font-sans text-5xl font-bold">How we make you profitable</h1>
 
@@ -90,13 +90,13 @@ const NewHomePage = () => {
 
             <h2 class="title-font inline-block cursor-pointer px-6 pt-4 pb-1 text-xs font-semibold uppercase tracking-widest text-orange-600 hover:font-bold">Cities</h2>
             <div class="py-1 px-6">
-              <h1 class="title-font mb-3 inline-block cursor-pointer text-xl capitali font-extrabold tracking-wide text-gray-800">How to get around in New York</h1>
-              <p class="line-clamp-6 mb-3 cursor-pointer overflow-hidden leading-relaxed text-gray-500">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil, maxime. Accusamus qui incidunt est rem at corrupti, earum fugiat iure.</p>
+              <h1 class="title-font mb-3 inline-block cursor-pointer text-xl capitali font-extrabold tracking-wide text-gray-800">Maximize Your Rewards, Minimize Your Effort!</h1>
+              <p class="line-clamp-6 mb-3 cursor-pointer overflow-hidden leading-relaxed text-gray-500">Users can securely link their order details to the platform, ensuring they earn rewards and cashback with every purchase made through the website.</p>
             </div>
             <div class="flex flex-wrap items-center justify-between px-6 pt-1 pb-4">
               <div class="flex flex-wrap text-sm text-gray-500">
-                <span class="mr-1">Oct 30, 2022</span>
-                <span class="">· 9 min read</span>
+                <span class="mr-1">Sep 25, 2024</span>
+                <span class="">· 1 min read</span>
               </div>
               <div class="mt-1">
                 <span class="mr-3 ml-auto inline-flex items-center py-1 pr-3 text-sm leading-none text-gray-400 md:ml-0 lg:ml-auto">
@@ -117,13 +117,13 @@ const NewHomePage = () => {
 
             <h2 class="title-font inline-block cursor-pointer px-6 pt-4 pb-1 text-xs font-semibold uppercase tracking-widest text-orange-600 hover:font-bold">Cities</h2>
             <div class="py-1 px-6">
-              <h1 class="title-font mb-3 inline-block cursor-pointer text-xl capitali font-extrabold tracking-wide text-gray-800">How to get around in New York</h1>
-              <p class="line-clamp-6 mb-3 cursor-pointer overflow-hidden leading-relaxed text-gray-500">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil, maxime. Accusamus qui incidunt est rem at corrupti, earum fugiat iure.</p>
+              <h1 class="title-font mb-3 inline-block cursor-pointer text-xl capitali font-extrabold tracking-wide text-gray-800">Shop Smart, Earn More – Get Cashback on Every Swipe!</h1>
+              <p class="line-clamp-6 mb-3 cursor-pointer overflow-hidden leading-relaxed text-gray-500">The app curates exclusive deals from various merchants, allowing users to shop at their favorite stores while earning extra rewards and cashback.</p>
             </div>
             <div class="flex flex-wrap items-center justify-between px-6 pt-1 pb-4">
               <div class="flex flex-wrap text-sm text-gray-500">
-                <span class="mr-1">Oct 30, 2022</span>
-                <span class="">· 9 min read</span>
+                <span class="mr-1">Sep 10, 2024</span>
+                <span class="">· 2 min read</span>
               </div>
               <div class="mt-1">
                 <span class="mr-3 ml-auto inline-flex items-center py-1 pr-3 text-sm leading-none text-gray-400 md:ml-0 lg:ml-auto">
@@ -143,13 +143,13 @@ const NewHomePage = () => {
             <iframe className='w-full bg-red-900 transform object-cover object-center transition duration-500 ease-in-out group-hover:scale-105 md:h-36 lg:h-48' src="https://lottie.host/embed/62a6fa38-8c61-4ddf-80c3-c9ac9a9afa76/gHBejt6e9K.json"></iframe>
             <h2 class="title-font inline-block cursor-pointer px-6 pt-4 pb-1 text-xs font-semibold uppercase tracking-widest text-orange-600 hover:font-bold">Cities</h2>
             <div class="py-1 px-6">
-              <h1 class="title-font mb-3 inline-block cursor-pointer text-xl capitali font-extrabold tracking-wide text-gray-800">How to get around in New York</h1>
-              <p class="line-clamp-6 mb-3 cursor-pointer overflow-hidden leading-relaxed text-gray-500">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil, maxime. Accusamus qui incidunt est rem at corrupti, earum fugiat iure.</p>
+              <h1 class="title-font mb-3 inline-block cursor-pointer text-xl capitali font-extrabold tracking-wide text-gray-800">Your Credit Card, Your Cashback – A Perfect combo!</h1>
+              <p class="line-clamp-6 mb-3 cursor-pointer overflow-hidden leading-relaxed text-gray-500">After shopping, users receive cashback directly into their account, with options to redeem or transfer rewards easily through the app.</p>
             </div>
             <div class="flex flex-wrap items-center justify-between px-6 pt-1 pb-4">
               <div class="flex flex-wrap text-sm text-gray-500">
-                <span class="mr-1">Oct 30, 2022</span>
-                <span class="">· 9 min read</span>
+                <span class="mr-1">Sep 1, 2024</span>
+                <span class="">· 1 min read</span>
               </div>
               <div class="mt-1">
                 <span class="mr-3 ml-auto inline-flex items-center py-1 pr-3 text-sm leading-none text-gray-400 md:ml-0 lg:ml-auto">
@@ -185,18 +185,19 @@ const NewHomePage = () => {
 
             <div class="mx-auto mt-20 grid max-w-screen-lg grid-cols-1 gap-x-8 gap-y-12 text-center sm:text-left md:grid-cols-3">
               <div class="grow-card backdrop-blur-lg relative mb-3 rounded-3xl border bg-white/70 px-12 py-10 text-left shadow lg:px-12">
-                <h3 class="relative text-5xl font-black text-blue-600">25M</h3>
-                <p class="relative mt-5 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores doloremque vel</p>
+                <h3 class="relative text-5xl font-black text-blue-600">100K+</h3>
+                <p class="relative mt-5 text-gray-600">Join a community of over 1 million savvy shoppers who are maximizing their rewards and cashback benefits with every purchase!</p>
               </div>
 
               <div class="backdrop-blur-lg relative mb-3 rounded-3xl border bg-white/70 px-12 py-10 text-left shadow lg:px-12">
                 <p class="relative text-5xl font-black text-blue-600">51%</p>
-                <p class="relative mt-5 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores doloremque vel</p>
+                <p class="relative mt-5 text-gray-600">Our innovative platform has driven a 51% year-on-year growth, proving the value we bring to users and partners alike.</p>
               </div>
 
               <div class="backdrop-blur-lg relative mb-3 rounded-3xl border bg-white/70 px-12 py-10 text-left shadow lg:px-12">
-                <p class="relative m-0 text-5xl font-black text-blue-600">8529+</p>
-                <p class="relative mt-5 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores doloremque vel</p>
+                <p class="relative m-0 text-5xl font-black text-blue-600">95%</p>
+                <p class="relative mt-5 text-gray-600">With a 95% satisfaction rate, our users love how easy and rewarding it is to shop using their credit cards through our platform!
+                </p>
               </div>
             </div>
           </div>
@@ -207,11 +208,11 @@ const NewHomePage = () => {
 
 
       <div className='featured product'>
-        <section class="bg-green-100 py-12 text-gray-700 sm:py-16 lg:py-20">
+        <section class="bg-blue-200 py-12 text-gray-700 sm:py-16 lg:py-20">
           <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-md text-center">
               <h2 class="font-serif text-2xl font-bold sm:text-3xl">Our featured Profit !!! </h2>
-              <p class="mt-4 text-base text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus faucibus massa dignissim tempus.</p>
+              <p class="mt-4 text-base text-gray-700">Top Picks, Maximum Rewards – More Value, More Cashback!</p>
             </div>
 
             <div class="mt-10 grid grid-cols-2 gap-6 lg:mt-16 lg:grid-cols-4 lg:gap-4">
@@ -220,13 +221,13 @@ const NewHomePage = () => {
                   <img class="group-hover:scale-125 h-full w-full object-cover transition-all duration-300" src="./iphone.jpg" alt="" />
                 </div>
                 <div class="absolute top-0 m-1 rounded-full bg-white">
-                  <p class="text-[10px] rounded-full bg-black p-1 font-bold uppercase tracking-wide text-white sm:px-3 sm:py-1">Sale</p>
+                  <p class="text-[10px] rounded-full bg-black p-1 font-bold uppercase tracking-wide text-white sm:px-3 sm:py-1">Earn ₹5999</p>
                 </div>
                 <div class="mt-4 flex items-start justify-between">
                   <div class="">
                     <h3 class="text-xs font-semibold sm:text-sm md:text-base">
                       <a href="#" title="" class="cursor-pointer">
-                        Arabian Musk
+                        Iphone 16 
                         <span class="absolute" aria-hidden="true"></span>
                       </a>
                     </h3>
@@ -250,21 +251,26 @@ const NewHomePage = () => {
                   </div>
 
                   <div class="text-right">
-                    <del class="mt-px text-xs font-semibold text-gray-600 sm:text-sm"> $79.00 </del>
-                    <p class="text-xs font-normal sm:text-sm md:text-base">$99.00</p>
+                    {/* <del class="mt-px text-xs font-semibold text-gray-600 sm:text-sm"> ₹79.00 </del> */}
+
+                    <p class="text-xs font-normal sm:text-sm md:text-base">₹149099.00</p>
                   </div>
                 </div>
               </article>
 
+
               <article class="relative">
                 <div class="aspect-square overflow-hidden">
-                  <img class="group-hover:scale-125 h-full w-full object-cover transition-all duration-300" src="./iphone.jpg" alt="" />
+                  <img class="group-hover:scale-125 h-full w-full object-cover transition-all duration-300" src="./motorola5g.webp" alt="" />
+                </div>
+                <div class="absolute top-0 m-1 rounded-full bg-white">
+                  <p class="text-[10px] rounded-full bg-black p-1 font-bold uppercase tracking-wide text-white sm:px-3 sm:py-1">Earn ₹3999</p>
                 </div>
                 <div class="mt-4 flex items-start justify-between">
                   <div class="">
                     <h3 class="text-xs font-semibold sm:text-sm md:text-base">
                       <a href="#" title="" class="cursor-pointer">
-                        Albanian Essence
+                        Motorola 5G
                         <span class="absolute" aria-hidden="true"></span>
                       </a>
                     </h3>
@@ -288,7 +294,7 @@ const NewHomePage = () => {
                   </div>
 
                   <div class="text-right">
-                    <p class="text-xs font-normal sm:text-sm md:text-base">$299.00</p>
+                    <p class="text-xs font-normal sm:text-sm md:text-base">₹47000.00</p>
                   </div>
                 </div>
               </article>
@@ -296,12 +302,15 @@ const NewHomePage = () => {
               <article class="relative">
                 <div class="aspect-square overflow-hidden">
                   <img class="group-hover:scale-125 h-full w-full object-cover transition-all duration-300" src="./iphone.jpg" alt="" />
+                  <div class="absolute top-0 m-1 rounded-full bg-white">
+                  <p class="text-[10px] rounded-full bg-black p-1 font-bold uppercase tracking-wide text-white sm:px-3 sm:py-1">Earn ₹4999</p>
+                </div>
                 </div>
                 <div class="mt-4 flex items-start justify-between">
                   <div class="">
                     <h3 class="text-xs font-semibold sm:text-sm md:text-base">
                       <a href="#" title="" class="cursor-pointer">
-                        Siberian Perfum
+                        IPhone 16 Pro
                         <span class="absolute" aria-hidden="true"></span>
                       </a>
                     </h3>
@@ -325,20 +334,24 @@ const NewHomePage = () => {
                   </div>
 
                   <div class="text-right">
-                    <p class="text-xs font-normal sm:text-sm md:text-base">$49.00</p>
+                    <p class="text-xs font-normal sm:text-sm md:text-base">₹89499.00</p>
                   </div>
                 </div>
               </article>
 
+
               <article class="relative">
                 <div class="aspect-square overflow-hidden">
-                  <img class="group-hover:scale-125 h-full w-full object-cover transition-all duration-300" src="./iphone.jpg" alt="" />
+                  <img class="group-hover:scale-125 h-full w-full object-cover transition-all duration-300" src="./motorola.png" alt="" />
+                  <div class="absolute top-0 m-1 rounded-full bg-white">
+                  <p class="text-[10px] rounded-full bg-black p-1 font-bold uppercase tracking-wide text-white sm:px-3 sm:py-1">Earn ₹4999</p>
+                </div>
                 </div>
                 <div class="mt-4 flex items-start justify-between">
                   <div class="">
                     <h3 class="text-xs font-semibold sm:text-sm md:text-base">
                       <a href="#" title="" class="cursor-pointer">
-                        Danish Levoune
+                        Motorola Edge 5G
                         <span class="absolute" aria-hidden="true"></span>
                       </a>
                     </h3>
@@ -364,7 +377,7 @@ const NewHomePage = () => {
                   </div>
 
                   <div class="text-right">
-                    <p class="text-xs font-normal sm:text-sm md:text-base">$79.00</p>
+                    <p class="text-xs font-normal sm:text-sm md:text-base">₹69999.00</p>
                   </div>
                 </div>
               </article>
@@ -374,11 +387,11 @@ const NewHomePage = () => {
 
       </div>
 
-      
+
 
       <NewCarousal />
 
-      
+
 
 
     </div>
