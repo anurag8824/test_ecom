@@ -15,9 +15,11 @@ const NewHomePage = () => {
       .then((res) => {
         const msg = res.data.msg
         if (msg == "Email not verifed !") {
-          alert("Please Verify your email")
+          // alert("Please Verify your email")
+          // navigate('/sign-in');
+
         } else if (msg == "Email verifed !") {
-          navigate('/deals');
+          // navigate('/deals');
         }
       })
   })

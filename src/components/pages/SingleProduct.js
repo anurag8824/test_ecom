@@ -3,6 +3,10 @@ import Name from '../CopyBoard/Name'
 import Address from '../CopyBoard/Address'
 import PinCode from '../CopyBoard/PinCode'
 import { json } from 'react-router-dom'
+import axios from 'axios';
+import { useNavigate, useParams } from 'react-router-dom';
+
+
 
 
 
@@ -83,9 +87,43 @@ const SingleProduct = () => {
     }
 
 
+    const id = useParams().id
+    console.log(id);
+    const navigate = useNavigate();
+    const [data, setData] = useState([])
+
+    useEffect(() => {
+
+        axios.get(`https://back-ecom-six.vercel.app/user/singledeal/${id}`, { withCredentials: true })
+            .then((res) => {
+                console.log(res);
+                const msg = res.data.msg;
+                if (msg == "0 Deals is live !") {
+                    console.log("No deals is live !");
+
+                } else {
+                    // setShowdeals(false);
+                    const data = res.data.Deal
+                    // console.log(data);
+                    setData(data);
+
+                    console.log(res);
+                }
+
+
+            }).catch((err) => {
+                console.log(err);
+            })
+            
+           
+
+    }, []);
+
+
+
 
     return (
-        <div>
+        <div className='pb-20'>
             <section class="py-3 sm:py-6">
                 <div class="container mx-auto px-4">
 
@@ -110,7 +148,9 @@ const SingleProduct = () => {
                                 <div class="flex items-center">
                                     <span class="mx-2 text-gray-400">/</span>
                                     <div class="-m-1">
-                                        <a href="#" class="rounded-md p-1 text-sm font-medium text-gray-600 focus:text-gray-900 focus:shadow hover:text-gray-800" aria-current="page"> Name </a>
+                                        <a href="#" class="rounded-md p-1 text-sm font-medium text-gray-600 focus:text-gray-900 focus:shadow hover:text-gray-800" aria-current="page"> {data.DealTitle
+
+                                        }  </a>
                                     </div>
                                 </div>
                             </li>
@@ -200,7 +240,7 @@ const SingleProduct = () => {
 
 
                                 <div className='ml-1 text-sm font-medium pb-2 text-gray-500'>
-                                    YaperID - xhsk342dk
+                                    IncrediblesID - {`incredibles` + id}
                                 </div>
 
                                 <div className={`${checked ? "hidden" : "block"} ml-1 text-sm font-medium pb-2 text-gray-500`}>

@@ -1,9 +1,46 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Accordion from './Accordian';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
+
 
 const ProfilePage = () => {
 
-    const [selector, setSelector] = useState(true);
+
+    // const [showdeals, setShowdeals] = useState(false);
+    // const [data, setData] = useState([])
+
+    const navigate = useNavigate();
+
+
+
+
+
+    useEffect(() => {
+
+        axios.get('https://back-ecom-six.vercel.app/user/me', { withCredentials: true })
+            .then((res) => {
+                const msg = res.data.msg
+                console.log(res,"user");
+                if (msg == "Email not verifed !") {
+                    // alert("Please Verify your email")
+                    navigate('/sign-in');
+
+                } else if (msg == "Email verifed !") {
+
+                }
+                
+                else 
+                {
+                    navigate('/sign-in');
+
+                }
+            })
+
+
+    }, []);
+
 
     return (
         <div>
@@ -22,17 +59,17 @@ const ProfilePage = () => {
 
                             <p class="font-normal text-base leading-7 text-gray-500  max-sm:text-center">Email: xyz1234@gamil.com</p>
                         </div>
-                        
+
                     </div>
-            <hr class="h-px my-1 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+                    <hr class="h-px my-1 bg-gray-200 border-0 dark:bg-gray-700"></hr>
 
 
 
 
                     {/* accordian from here  */}
 
-                    <Accordion/>
-                    
+                    <Accordion />
+
 
 
 

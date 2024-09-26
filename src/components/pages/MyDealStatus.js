@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const DealsPage = () => {
+const MyDealStatus = () => {
 
     const [showdeals, setShowdeals] = useState(false);
     const [data, setData] = useState([])
@@ -120,4 +120,4 @@ const DealsPage = () => {
     )
 }
 
-export default DealsPage
+export default MyDealStatus

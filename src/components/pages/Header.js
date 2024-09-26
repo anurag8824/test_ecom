@@ -1,19 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 
 
 const Navbar = () => {
 
   const [iuser, setIuser] = useState(true);
   const local = useLocation().pathname;
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     axios.get('https://back-ecom-six.vercel.app/user/me', { withCredentials: true })
       .then((res) => {
         const msg = res.data.msg
+        // console.log("res",res)
+        // console.log(msg);
         if (msg == "Email not verifed !") {
-          alert("Please Verify your email")
+          // alert("Email not verifed")
+          // navigate('/sign-in');
+
         } else if (msg == "Email verifed !") {
           setIuser(false)
         }
@@ -47,6 +55,7 @@ const Navbar = () => {
           <div class={`absolute right-7 top-5 cursor-pointer text-blue-600 ${iuser ? "block" : "hidden"} `} >
             <a href='/sign-in' class="rounded-full border-2 border-white px-6 py-1 font-medium text-white transition-colors hover:bg-white hover:text-gray-700">Login</a>
           </div>
+          
 
 
 
@@ -60,6 +69,7 @@ const Navbar = () => {
                 className="w-12 h-12"
               /></a>
           </div>
+
 
         </header>
       </div>

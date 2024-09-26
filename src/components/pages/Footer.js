@@ -1,7 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaHome, FaTags, FaUser } from 'react-icons/fa';
+import { FaBarsProgress } from 'react-icons/fa6';
+
+// import axios from 'axios';
+// import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+
+  // const navigate = useNavigate();
+
+
+  // useEffect(() => {
+  //   axios.get('https://back-ecom-six.vercel.app/user/me', { withCredentials: true })
+  //     .then((res) => {
+  //       const msg = res.data.msg
+  //       if (msg == "Email not verifed !") {
+  //         // alert("Please Verify your email")
+  //         navigate('/sign-in');
+
+  //       } else if (msg == "Email verifed !") {
+  //         navigate('/deals');
+  //       }
+  //     })
+  // })
+
+
   return (
 
     <div className=''>
@@ -91,6 +114,12 @@ const Footer = () => {
           <FaTags size={36} />
           <span className="sr-only">My Order</span>
         </a>
+
+        <a href="/deal-status" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+          <FaBarsProgress  size={36} />
+          <span className="sr-only">My Status</span>
+        </a>
+
         <a href="/profile" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
           <FaUser size={36} />
           <span className="sr-only">Wallet</span>

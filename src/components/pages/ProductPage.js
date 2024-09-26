@@ -19,6 +19,7 @@ const ProductPage = () => {
                 } else {
                     // setShowdeals(false);
                     const data = res.data.Deal
+                    // console.log("hello form pro");
                     // console.log(data);
                     setData(data);
                     console.log(res);
@@ -33,14 +34,14 @@ const ProductPage = () => {
 
     const shopPage = (e) => {
         e.preventDefault();
-        axios.post("https://back-ecom-six.vercel.app/user/orderclick", { Product_id: id }, { withCredentials: true })
+        axios.post("https://back-ecom-six.vercel.app/user/orderclick", { Product_id: id }, {withCredentials:true})
             .then((res) => {
                 console.log(res, "response")
                 const url = data.Link;
                 console.log(url)// Replace with your desired URL
                 window.open(url, '_blank', 'noopener,noreferrer');
-                const id = res.data.msg
-                navigate(`/single-product/${id}`);
+                const Id = res.data.msg
+                navigate(`/single-product/${Id}`);
             })
             .catch((err) => {
                 console.log(err);
@@ -51,7 +52,7 @@ const ProductPage = () => {
 
 
     return (
-        <div>
+        <div className='pb-20'>
             <section class="py-6 sm:py-6">
 
                 <div class="container mx-auto px-4">
@@ -89,7 +90,7 @@ const ProductPage = () => {
                         <div class="lg:col-span-3 lg:row-end-1">
 
                             <div class="max-w-xl pl-10 overflow-hidden rounded-lg">
-                            <img class="h-full w-60 max-w-full object-cover" src="/motorola.png" alt="" />
+                                <img class="h-full w-60 max-w-full object-cover" src="/motorola.png" alt="" />
                             </div>
 
                         </div>

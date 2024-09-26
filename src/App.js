@@ -25,6 +25,8 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="deals" element={<DealsPage />} />
+          <Route path="deal-status" element={<DealsPage />} />
+
           <Route path="sign-in" element={<SignPage />} />
           <Route path="user-form" element={<UserForm />} />
           <Route path="profile" element={<ProfilePage />} />
