@@ -60,30 +60,30 @@ const DealsPage = () => {
                 <section id='Projects' className="w-96 mx-auto grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 justify-items-center justify-center gap-y-8 gap-x-96 mt-8 mb-36">
 
                     {data.map((deal) => {
-                        return (<div class="w-72 bg-gray-100 shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl hover:shadow-blue-300">
+                        return (<div className="w-72 bg-gray-100 shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl hover:shadow-blue-300">
                             <a href={`/product/${deal._id}`}>
                                 <div style={{ height: "20rem" }} className='w-72 '>
 
                                     <img src="motorola.png"
-                                        alt="Product" class="w-72 object-cover rounded-t-xl" />
+                                        alt="Product" className="w-72 object-cover rounded-t-xl" />
                                 </div>
 
-                                <div class="w-48 pt-4">
-                                    <span class="text-black  pl-2 font-medium  uppercase text-xs">Earn ₹{deal.OfferAmmount}</span>
-                                    <p class="text-gray-700  pt-4 pl-2 text-xs">on {deal.CardType} Bank Credit Cards</p>
-                                    <p class="text-md  font-normal pt-1  pl-2  ">{deal.DealTitle}</p>
+                                <div className="w-48 pt-4">
+                                    <span className="text-black  pl-2 font-medium  uppercase text-xs">Earn ₹{deal.OfferAmmount}</span>
+                                    <p className="text-gray-700  pt-4 pl-2 text-xs">on {deal.CardType} Bank Credit Cards</p>
+                                    <p className="text-md  font-normal pt-1  pl-2  ">{deal.DealTitle}</p>
 
                                     <div className='flex items-center pt-1'>
-                                        <div class="ml-2"><img width="12" height="12" src="https://img.icons8.com/color/48/rgb-circle-1--v1.png" alt="rgb-circle-1--v1" /></div>
-                                        <p class="text-xs truncate block pl-2 uppercase ">Variant- {deal.Variant}</p>
+                                        <div className="ml-2"><img width="12" height="12" src="https://img.icons8.com/color/48/rgb-circle-1--v1.png" alt="rgb-circle-1--v1" /></div>
+                                        <p className="text-xs truncate block pl-2 uppercase ">Variant- {deal.Variant}</p>
                                     </div>
 
 
-                                    <div class="flex items-center pt-1 mb-2">
-                                        <p class="text-md pl-2 font-bold text-black cursor-auto my-1"> ₹{deal.Price}</p>
+                                    <div className="flex items-center pt-1 mb-2">
+                                        <p className="text-md pl-2 font-bold text-black cursor-auto my-1"> ₹{deal.Price}</p>
 
-                                        <div class="ml-2"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            fill="currentColor" class="bi bi-bag-plus" viewBox="0 0 16 16">
+                                        <div className="ml-2"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                            fill="currentColor" className="bi bi-bag-plus" viewBox="0 0 16 16">
                                             <path fill-rule="evenodd"
                                                 d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z" />
                                             <path

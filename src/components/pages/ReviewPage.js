@@ -4,16 +4,16 @@ const ReviewPage = () => {
     return (
         <div>
 
-            <section class="py-8 relative">
-                <div class=" max-w-xl px-4 md:px-5 lg-6 mx-auto">
-                    <div class="w-full grid  md:grid-rows-2 gap-4">
-                        {/* <h2 class="font-manrope font-bold text-4xl text-black mb-8 text-center">Our customer reviews
+            <section className="py-8 relative">
+                <div className=" max-w-xl px-4 md:px-5 lg-6 mx-auto">
+                    <div className="w-full grid  md:grid-rows-2 gap-4">
+                        {/* <h2 className="font-manrope font-bold text-4xl text-black mb-8 text-center">Our customer reviews
                         </h2> */}
 
                         <div className='border'>
 
-                            <div class="pt-2 pb-1 border-b  max-xl:max-w-2xl max-xl:mx-auto">
-                                <div class="flex items-center gap-1 mb-1">
+                            <div className="pt-2 pb-1 border-b  max-xl:max-w-2xl max-xl:mx-auto">
+                                <div className="flex items-center gap-1 mb-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
                                         <g clip-path="url(#clip0_13624_2892)">
                                             <path
@@ -75,24 +75,24 @@ const ReviewPage = () => {
                                         </defs>
                                     </svg>
                                 </div>
-                                <h3 class="font-manrope font-semibold text-xl sm:text-2xl leading-9 text-black mb-1">Outstanding Experience!!!
+                                <h3 className="font-manrope font-semibold text-xl sm:text-2xl leading-9 text-black mb-1">Outstanding Experience!!!
                                 </h3>
-                                <div class="flex sm:items-center flex-col min-[400px]:flex-row justify-between gap-1 mb-1">
-                                    <div class="flex items-center gap-2">
-                                        <img src="https://pagedone.io/asset/uploads/1704349572.png" alt="John image" class="w-8 h-8 rounded-full object-cover" />
-                                        <h6 class="font-semibold text-md leading-8 text-indigo-600 ">John Watson</h6>
+                                <div className="flex sm:items-center flex-col min-[400px]:flex-row justify-between gap-1 mb-1">
+                                    <div className="flex items-center gap-2">
+                                        <img src="https://pagedone.io/asset/uploads/1704349572.png" alt="John image" className="w-8 h-8 rounded-full object-cover" />
+                                        <h6 className="font-semibold text-md leading-8 text-indigo-600 ">John Watson</h6>
                                     </div>
-                                    <p class="font-normal text-md leading-1 text-gray-400">Nov 01, 2023</p>
+                                    <p className="font-normal text-md leading-1 text-gray-400">Nov 01, 2023</p>
                                 </div>
-                                <p class=" text-md leading-1 text-gray-400 max-xl:text-justify">One of the standout features of Pagedone is its intuitive and user-friendly interface. Navigating through the system feels natural, and the layout makes it easy to locate and utilize various design elements. This is particularly beneficial for designers looking to streamline their workflow.</p>
+                                <p className=" text-md leading-1 text-gray-400 max-xl:text-justify">One of the standout features of Pagedone is its intuitive and user-friendly interface. Navigating through the system feels natural, and the layout makes it easy to locate and utilize various design elements. This is particularly beneficial for designers looking to streamline their workflow.</p>
                             </div>
 
                         </div>
 
                         <div className='border'>
 
-                            <div class="pt-2 pb-1 border-b  max-xl:max-w-2xl max-xl:mx-auto">
-                                <div class="flex items-center gap-1 mb-1">
+                            <div className="pt-2 pb-1 border-b  max-xl:max-w-2xl max-xl:mx-auto">
+                                <div className="flex items-center gap-1 mb-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
                                         <g clip-path="url(#clip0_13624_2892)">
                                             <path
@@ -154,16 +154,16 @@ const ReviewPage = () => {
                                         </defs>
                                     </svg>
                                 </div>
-                                <h3 class="font-manrope font-semibold text-xl sm:text-2xl leading-9 text-black mb-1">Outstanding Experience!!!
+                                <h3 className="font-manrope font-semibold text-xl sm:text-2xl leading-9 text-black mb-1">Outstanding Experience!!!
                                 </h3>
-                                <div class="flex sm:items-center flex-col min-[400px]:flex-row justify-between gap-1 mb-1">
-                                    <div class="flex items-center gap-2">
-                                        <img src="https://pagedone.io/asset/uploads/1704349572.png" alt="John image" class="w-8 h-8 rounded-full object-cover" />
-                                        <h6 class="font-semibold text-md leading-8 text-indigo-600 ">John Watson</h6>
+                                <div className="flex sm:items-center flex-col min-[400px]:flex-row justify-between gap-1 mb-1">
+                                    <div className="flex items-center gap-2">
+                                        <img src="https://pagedone.io/asset/uploads/1704349572.png" alt="John image" className="w-8 h-8 rounded-full object-cover" />
+                                        <h6 className="font-semibold text-md leading-8 text-indigo-600 ">John Watson</h6>
                                     </div>
-                                    <p class="font-normal text-md leading-1 text-gray-400">Nov 01, 2023</p>
+                                    <p className="font-normal text-md leading-1 text-gray-400">Nov 01, 2023</p>
                                 </div>
-                                <p class=" text-md leading-1 text-gray-400 max-xl:text-justify">One of the standout features of Pagedone is its intuitive and user-friendly interface. Navigating through the system feels natural, and the layout makes it easy to locate and utilize various design elements. This is particularly beneficial for designers looking to streamline their workflow.</p>
+                                <p className=" text-md leading-1 text-gray-400 max-xl:text-justify">One of the standout features of Pagedone is its intuitive and user-friendly interface. Navigating through the system feels natural, and the layout makes it easy to locate and utilize various design elements. This is particularly beneficial for designers looking to streamline their workflow.</p>
                             </div>
 
                         </div>

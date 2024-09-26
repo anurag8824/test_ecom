@@ -14,6 +14,8 @@ import FAQ from './components/pages/FooterPages/FAQ';
 import PrivacyPolicy from './components/pages/FooterPages/PrivacyPolicy';
 import TOS from './components/pages/FooterPages/TOS';
 import Check from './components/check';
+import MyDealStatus from './components/pages/MyDealStatus';
+import ManageBank from './components/pages/ManageBank';
 
 
 
@@ -25,7 +27,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="deals" element={<DealsPage />} />
-          <Route path="deal-status" element={<DealsPage />} />
+          <Route path="deal-status" element={<MyDealStatus />} />
 
           <Route path="sign-in" element={<SignPage />} />
           <Route path="user-form" element={<UserForm />} />
@@ -38,7 +40,7 @@ function App() {
           <Route path="faq" element={<FAQ />} />
           <Route path="privacy-policy" element={<PrivacyPolicy />} />
           <Route path="terms-of-service" element={<TOS />} />
-          <Route path="check" element={<Check />} />
+          <Route path="manage-bank" element={<ManageBank />} />
 
 
 

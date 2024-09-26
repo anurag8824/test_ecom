@@ -69,7 +69,12 @@ const MyDealStatus = () => {
                                 </div>
 
                                 <div class="w-48 pt-4">
+                                    <div className='grid gap-12 grid-cols-2 '>
                                     <span class="text-black  pl-2 font-medium  uppercase text-xs">Earn ₹{deal.OfferAmmount}</span>
+                                    <div className='w-3 h-3'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg> <span>Ordered</span> </div>
+                                   
+
+                                    </div>
                                     <p class="text-gray-700  pt-4 pl-2 text-xs">on {deal.CardType} Bank Credit Cards</p>
                                     <p class="text-md  font-normal pt-1  pl-2  ">{deal.DealTitle}</p>
 

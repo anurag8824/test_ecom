@@ -31,18 +31,18 @@ const Footer = () => {
 
 
       {/* Desktop View  */}
-      <footer class="bg-gray-800 md:block hidden">
-        <div class="mx-auto grid max-w-screen-xl gap-x-12 gap-y-8 px-4 py-8 md:grid-cols-2 xl:grid-cols-4 xl:px-10">
-          <div class="max-w-sm">
-            <div class="mb-6 flex h-12 items-center space-x-2">
-              <span class="text-2xl font-bold text-white">Incre<span class="text-blue-600">dibles</span>.</span>
+      <footer className="bg-gray-800 md:block hidden">
+        <div className="mx-auto grid max-w-screen-xl gap-x-12 gap-y-8 px-4 py-8 md:grid-cols-2 xl:grid-cols-4 xl:px-10">
+          <div className="max-w-sm">
+            <div className="mb-6 flex h-12 items-center space-x-2">
+              <span className="text-2xl font-bold text-white">Incre<span className="text-blue-600">dibles</span>.</span>
             </div>
-            <div class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis ad a officia ea expedita!</div>
+            <div className="text-white">Shop. Earn. Repeat – Unlock Rewards and Cashback with Every Purchase!</div>
           </div>
-          <div class="">
-            <div class="mb-2 mt-4 font-medium text-blue-600 xl:mb-4">Address</div>
+          <div className="">
+            <div className="mb-2 mt-4 font-medium text-blue-600 xl:mb-4">Address</div>
 
-            <div class="text-white pb-2">
+            <div className="text-white pb-2">
               Near Sagar Enclave,<br />
               Mangyawas-302020 <br />
               (Jaipur Office)
@@ -50,7 +50,7 @@ const Footer = () => {
 
             </div>
 
-            <div class="text-white pb-2">
+            <div className="text-white pb-2">
               729 Transport Nagar, <br />
               Transport Nagar-211011 <br />
               (Allahabad Office)
@@ -58,44 +58,44 @@ const Footer = () => {
             </div>
             <hr />
 
-            <div class="text-white">
+            <div className="text-white">
               10/42-Nehru Nagar, <br />
               Sethi House-110065 <br />
               (Delhi Office)
             </div>
 
           </div>
-          <div class="">
-            <div class="mb-2 mt-4 font-medium text-blue-600 xl:mb-4">Links</div>
-            <nav aria-label="Footer Navigation" class="text-gray-500">
+          <div className="">
+            <div className="mb-2 mt-4 font-medium text-blue-600 xl:mb-4">Links</div>
+            <nav aria-label="Footer Navigation" className="text-gray-500">
 
-              <ul class="space-y-3">
-                <li><a class="text-white hover:text-blue-600 hover:underline" href="/about-us">About Us</a></li>
-                <li><a class="text-white hover:text-blue-600 hover:underline" href="/contact">Contact</a></li>
-                <li><a class="text-white hover:text-blue-600 hover:underline" href="/faq">FAQ's</a></li>
-                <li><a class="text-white hover:text-blue-600 hover:underline" href="/terms-of-service">Terms of Service</a></li>
-                <li><a class="text-white hover:text-blue-600 hover:underline" href="/privacy-policy">Privacy Policy</a></li>
+              <ul className="space-y-3">
+                <li><a className="text-white hover:text-blue-600 hover:underline" href="/about-us">About Us</a></li>
+                <li><a className="text-white hover:text-blue-600 hover:underline" href="/contact">Contact</a></li>
+                <li><a className="text-white hover:text-blue-600 hover:underline" href="/faq">FAQ's</a></li>
+                <li><a className="text-white hover:text-blue-600 hover:underline" href="/terms-of-service">Terms of Service</a></li>
+                <li><a className="text-white hover:text-blue-600 hover:underline" href="/privacy-policy">Privacy Policy</a></li>
               </ul>
             </nav>
           </div>
-          <div class="">
-            <div class="mb-2 mt-4 font-medium text-white xl:mb-4">Subscribe to our Newsletter</div>
-            <div class="flex flex-col">
-              <div class="mb-4">
-                <input type="email" class="mb-2 block h-14 w-full rounded-xl bg-gray-200 px-4 text-gray-800 focus:outline-none focus:outline focus:ring-1 focus:ring-blue-600 sm:w-80" placeholder="Enter your email" />
-                <button class="block rounded-xl bg-blue-600 px-6 py-3 font-medium text-white">Subscribe</button>
+          <div className="">
+            <div className="mb-2 mt-4 font-medium text-white xl:mb-4">Subscribe to our Newsletter</div>
+            <div className="flex flex-col">
+              <div className="mb-4">
+                <input type="email" className="mb-2 block h-14 w-full rounded-xl bg-gray-200 px-4 text-gray-800 focus:outline-none focus:outline focus:ring-1 focus:ring-blue-600 sm:w-80" placeholder="Enter your email" />
+                <button className="block rounded-xl bg-blue-600 px-6 py-3 font-medium text-white">Subscribe</button>
               </div>
             </div>
           </div>
         </div>
         <hr></hr>
-        <div class="bg-gray-800">
-          <div class="mx-auto flex max-w-screen-xl flex-col gap-y-4 px-4 py-3 text-center text-white sm:flex-row sm:justify-between sm:text-left">
-            <div class="">© 2024 Incredibles | All Rights Reserved</div>
-            <div class="">
-              <a class="" href="#">Privacy Policy</a>
+        <div className="bg-gray-800">
+          <div className="mx-auto flex max-w-screen-xl flex-col gap-y-4 px-4 py-3 text-center text-white sm:flex-row sm:justify-between sm:text-left">
+            <div className="">© 2024 Incredibles | All Rights Reserved</div>
+            <div className="">
+              <a className="" href="#">Privacy Policy</a>
               <span>|</span>
-              <a class="" href="#">Terms of Service</a>
+              <a className="" href="#">Terms of Service</a>
             </div>
           </div>
         </div>
